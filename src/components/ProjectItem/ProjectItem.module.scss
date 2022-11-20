@@ -1,0 +1,42 @@
+.container {
+  padding: 0 10px;
+  margin-bottom: 15px;
+  @media (max-width: 410px) {
+    padding: 2px;
+  }
+  &--image {
+    position: relative;
+    width: 400px;
+    height: 265px;
+
+    @media (max-width: 410px) {
+      width: 390px;
+    }
+  }
+  &__detail {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px auto;
+    @media (max-width: 410px) {
+      padding: 8px;
+    }
+    .text--box {
+      .text {
+        margin: 0;
+        margin-bottom: 5px;
+        font-family: "Open Sans", sans-serif;
+        font-style: normal;
+        margin-bottom: 3px;
+        &__name {
+          font-weight: 700;
+          margin: 0;
+          margin-bottom: 3px;
+        }
+      }
+    }
+  }
+  .button {
+    margin-top: 5px;
+  }
+}

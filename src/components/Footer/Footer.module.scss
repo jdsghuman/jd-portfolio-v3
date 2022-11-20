@@ -1,0 +1,20 @@
+.footer {
+  height: 120px;
+  width: 100%;
+  background: #ffffff;
+  .container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-left: 10px;
+  }
+
+  .item {
+    margin-right: 24px;
+  }
+}

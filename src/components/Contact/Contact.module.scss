@@ -1,0 +1,49 @@
+.section {
+  background: rgba(220, 220, 220, 0.24);
+  width: 100%;
+  margin-top: 40px;
+  padding-top: 1px;
+  padding-bottom: 40px;
+}
+
+.form {
+  margin: 0 auto;
+  max-width: 660px;
+  label {
+    display: flex;
+    flex-direction: column;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+  }
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    @media (max-width: 712px) {
+      flex-direction: column;
+    }
+  }
+
+  .name {
+    width: 48%;
+    @media (max-width: 712px) {
+      width: 100%;
+    }
+  }
+  .input {
+    font-size: 16px;
+    font-size: max(16px, 1em);
+    margin-top: 9px;
+    padding: 0.25em 0.5em;
+    height: 42px;
+    background-color: #fff;
+    border: 1px solid #999999;
+    &__message {
+      height: 200px;
+    }
+  }
+  .margin__bottom {
+    margin-bottom: 20px;
+  }
+}
