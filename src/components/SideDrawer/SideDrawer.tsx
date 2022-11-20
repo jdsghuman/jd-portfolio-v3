@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
+import { useState } from "react";
 import LinkDisplay from "@components/LinkDisplay";
 import classNames from "classnames/bind";
 import styles from "./SideDrawer.module.scss";
@@ -6,6 +6,15 @@ import styles from "./SideDrawer.module.scss";
 const cx = classNames.bind(styles);
 
 const SideDrawer = ({ click, show }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const handleMobileMenu = (e: Event, linkLocation) => {
+    e.preventDefault();
+    setIsExpanded(!isExpanded);
+    const element = document.getElementById(linkLocation);
+    element.scrollIntoView({ block: "start", behavior: "smooth" });
+  };
+
   return (
     // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
     <nav
@@ -25,7 +34,7 @@ const SideDrawer = ({ click, show }) => {
         })}
       >
         <LinkDisplay link="/">
-          <a>Home</a>
+          <a onClick={(e) => handleMobileMenu(e, "home")}>Home</a>
         </LinkDisplay>
       </div>
       <div
@@ -34,7 +43,7 @@ const SideDrawer = ({ click, show }) => {
         })}
       >
         <LinkDisplay link="/#projects">
-          <a>Projects</a>
+          <a onClick={(e) => handleMobileMenu(e, "projects")}>Projects</a>
         </LinkDisplay>
       </div>
       <div
@@ -43,7 +52,7 @@ const SideDrawer = ({ click, show }) => {
         })}
       >
         <LinkDisplay link="/#skills">
-          <a>Skills</a>
+          <a onClick={(e) => handleMobileMenu(e, "skills")}>Skills</a>
         </LinkDisplay>
       </div>
       <div
@@ -52,7 +61,7 @@ const SideDrawer = ({ click, show }) => {
         })}
       >
         <LinkDisplay link="/#about">
-          <a>About</a>
+          <a onClick={(e) => handleMobileMenu(e, "about")}>About</a>
         </LinkDisplay>
       </div>
       <div
@@ -61,7 +70,7 @@ const SideDrawer = ({ click, show }) => {
         })}
       >
         <LinkDisplay link="/#contact">
-          <a>Contact</a>
+          <a onClick={(e) => handleMobileMenu(e, "contact")}>Contact</a>
         </LinkDisplay>
       </div>
     </nav>

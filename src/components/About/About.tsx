@@ -3,7 +3,13 @@ import styles from "./About.module.scss";
 
 const About = () => {
   return (
-    <section className={styles.section} id="about">
+    <section className={styles.section}>
+      <div style={{ position: "relative" }}>
+        <div
+          id="about"
+          style={{ position: "absolute", top: "-50px", left: 0 }}
+        ></div>
+      </div>
       <Heading title="about" />
       <div className={styles.container}>
         <p className={styles.text}>

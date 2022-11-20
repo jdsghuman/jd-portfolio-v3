@@ -4,7 +4,13 @@ import styles from "./Hero.module.scss";
 
 const Hero = () => {
   return (
-    <section className={styles.section} id="home">
+    <section className={styles.section}>
+      <div style={{ position: "relative" }}>
+        <div
+          id="home"
+          style={{ position: "absolute", top: "-1000px", left: 0 }}
+        ></div>
+      </div>
       <div className={styles.text}>
         Welcome, I am a UX/UI designer located in Katy, Texas. Fueled by coffee
         and green smoothies, motivated by passion and a love for all things

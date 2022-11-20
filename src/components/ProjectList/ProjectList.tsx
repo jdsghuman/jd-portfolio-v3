@@ -6,7 +6,13 @@ import styles from "./ProjectList.module.scss";
 
 const ProjectList = () => {
   return (
-    <section id="projects">
+    <section>
+      <div style={{ position: "relative" }}>
+        <div
+          id="projects"
+          style={{ position: "absolute", top: "-50px", left: 0 }}
+        ></div>
+      </div>
       <Heading title="projects" />
       <div className={styles.container}>
         {projects.map((project) => {

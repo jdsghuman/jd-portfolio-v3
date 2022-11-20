@@ -14,7 +14,13 @@ const Contact = () => {
     message: "",
   });
   return (
-    <section className={styles.section} id="contact">
+    <section className={styles.section}>
+      <div style={{ position: "relative" }}>
+        <div
+          id="contact"
+          style={{ position: "absolute", top: "-50px", left: 0 }}
+        ></div>
+      </div>
       <Heading title="contact" />
       <form className={styles.form}>
         <div>

@@ -3,7 +3,13 @@ import styles from "./Skills.module.scss";
 
 const Skills = () => {
   return (
-    <section className={styles.section} id="skills">
+    <section className={styles.section}>
+      <div style={{ position: "relative" }}>
+        <div
+          id="skills"
+          style={{ position: "absolute", top: "-50px", left: 0 }}
+        ></div>
+      </div>
       <Heading title="skills" />
       <div className={styles.container}>
         <div className={styles["container--skills"]}>
