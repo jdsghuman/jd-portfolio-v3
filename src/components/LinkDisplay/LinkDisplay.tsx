@@ -10,7 +10,6 @@ interface LinkDisplayTypes {
 
 const LinkDisplay = ({ link, children }: LinkDisplayTypes) => {
   const activeLinkCtx = useContext(ActiveLinkContext);
-  console.log("link in linkdisplay", link);
   let className = children?.props?.className || "";
   // if (activeLinkCtx.activeLink === link) {
   if (link.includes(activeLinkCtx.activeLink)) {

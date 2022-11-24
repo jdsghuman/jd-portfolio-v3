@@ -11,7 +11,6 @@ const Nav = ({ drawerToggleClickHandler, sideDrawerOpen }) => {
   const activeLinkCtx = useContext(ActiveLinkContext);
   const [isExpanded, setIsExpanded] = useState(false);
 
-  console.log("activeLink Context", activeLinkCtx.activeLink);
   const handleMobileMenu = (e: Event, linkLocation) => {
     e.preventDefault();
     setIsExpanded(!isExpanded);
@@ -21,7 +20,8 @@ const Nav = ({ drawerToggleClickHandler, sideDrawerOpen }) => {
   };
 
   const goToHomePage = () => {
-    router.pathname === "/" && window.location.reload();
+    router.pathname === "/";
+    activeLinkCtx.updateActiveLink("home");
   };
 
   return (

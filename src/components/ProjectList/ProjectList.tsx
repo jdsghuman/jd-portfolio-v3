@@ -15,13 +15,14 @@ const ProjectList = () => {
       </div>
       <Heading title="projects" />
       <div className={styles.container}>
-        {projects.map((project) => {
+        {projects.map((project, i) => {
           return (
             <ProjectItem
               name={project.name}
               image={project.image}
               role={project.role}
               description={project.description}
+              key={`${project.name}-${i}`}
             />
           );
         })}
