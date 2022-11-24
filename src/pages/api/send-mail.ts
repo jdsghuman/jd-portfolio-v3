@@ -1,6 +1,11 @@
+import { NextApiRequest, NextApiResponse } from "next/dist/shared/lib/utils";
+
 const nodemailer = require("nodemailer");
 
-export default async function handler(req, res) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   if (req.method === "POST") {
     let transporter = nodemailer.createTransport({
       host: "smtp.zoho.com",
@@ -12,9 +17,9 @@ export default async function handler(req, res) {
       },
     });
 
-    await new Promise((resolve, reject) => {
+    await new Promise<void>((resolve, reject) => {
       // verify connection configuration
-      transporter.verify((error) => {
+      transporter.verify((error: any) => {
         if (error) {
           console.log(error);
           reject(error);
@@ -40,7 +45,7 @@ export default async function handler(req, res) {
     };
 
     await new Promise((resolve, reject) => {
-      transporter.sendMail(messageToSend, function (error, info) {
+      transporter.sendMail(messageToSend, function (error: any, info: any) {
         if (error) {
           console.log(error);
           reject(error);

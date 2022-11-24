@@ -6,16 +6,21 @@ import ActiveLinkContext from "src/store/link-context";
 
 import styles from "./Nav.module.scss";
 
-const Nav = ({ drawerToggleClickHandler, sideDrawerOpen }) => {
+interface NavProps {
+  drawerToggleClickHandler: () => void;
+  sideDrawerOpen: boolean;
+}
+
+const Nav = ({ drawerToggleClickHandler, sideDrawerOpen }: NavProps) => {
   const router = useRouter();
   const activeLinkCtx = useContext(ActiveLinkContext);
   const [isExpanded, setIsExpanded] = useState(false);
 
-  const handleMobileMenu = (e: Event, linkLocation) => {
+  const handleMobileMenu = (e: Event, linkLocation: string) => {
     e.preventDefault();
     setIsExpanded(!isExpanded);
     const element = document.getElementById(linkLocation);
-    element.scrollIntoView({ block: "start", behavior: "smooth" });
+    element?.scrollIntoView({ block: "start", behavior: "smooth" });
     activeLinkCtx.updateActiveLink(linkLocation);
   };
 
@@ -44,7 +49,7 @@ const Nav = ({ drawerToggleClickHandler, sideDrawerOpen }) => {
             <li className={styles["nav__items--home"]}>
               <LinkDisplay link="/">
                 <a
-                  onClick={(e) => handleMobileMenu(e, "home")}
+                  onClick={(e: any) => handleMobileMenu(e, "home")}
                   className={styles.nav__link}
                 >
                   home
@@ -54,7 +59,7 @@ const Nav = ({ drawerToggleClickHandler, sideDrawerOpen }) => {
             <li>
               <LinkDisplay link="/#projects">
                 <a
-                  onClick={(e) => handleMobileMenu(e, "projects")}
+                  onClick={(e: any) => handleMobileMenu(e, "projects")}
                   className={styles.nav__link}
                 >
                   projects
@@ -64,7 +69,7 @@ const Nav = ({ drawerToggleClickHandler, sideDrawerOpen }) => {
             <li>
               <LinkDisplay link="/#skills">
                 <a
-                  onClick={(e) => handleMobileMenu(e, "skills")}
+                  onClick={(e: any) => handleMobileMenu(e, "skills")}
                   className={styles.nav__link}
                 >
                   skills
@@ -74,7 +79,7 @@ const Nav = ({ drawerToggleClickHandler, sideDrawerOpen }) => {
             <li>
               <LinkDisplay link="/#about">
                 <a
-                  onClick={(e) => handleMobileMenu(e, "about")}
+                  onClick={(e: any) => handleMobileMenu(e, "about")}
                   className={styles.nav__link}
                 >
                   about
@@ -84,7 +89,7 @@ const Nav = ({ drawerToggleClickHandler, sideDrawerOpen }) => {
             <li>
               <LinkDisplay link="/#contact">
                 <a
-                  onClick={(e) => handleMobileMenu(e, "contact")}
+                  onClick={(e: any) => handleMobileMenu(e, "contact")}
                   className={styles.nav__link}
                 >
                   contact

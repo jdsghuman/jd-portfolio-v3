@@ -1,5 +1,5 @@
 import classNames from "classnames/bind";
-import React, { useEffect, useState } from "react";
+import React, { FormEventHandler, useState } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -19,7 +19,7 @@ const initialState = {
 const Contact = () => {
   const [form, setForm] = useState(initialState);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
 
     axios

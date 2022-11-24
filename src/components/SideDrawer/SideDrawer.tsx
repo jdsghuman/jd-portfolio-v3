@@ -5,14 +5,19 @@ import styles from "./SideDrawer.module.scss";
 
 const cx = classNames.bind(styles);
 
-const SideDrawer = ({ click, show }) => {
+interface SideDrawerProps {
+  show: boolean;
+  click: () => void;
+}
+
+const SideDrawer = ({ click, show }: SideDrawerProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
-  const handleMobileMenu = (e: Event, linkLocation) => {
+  const handleMobileMenu = (e: Event, linkLocation: string) => {
     e.preventDefault();
     setIsExpanded(!isExpanded);
     const element = document.getElementById(linkLocation);
-    element.scrollIntoView({ block: "start", behavior: "smooth" });
+    element?.scrollIntoView({ block: "start", behavior: "smooth" });
   };
 
   return (
@@ -34,7 +39,7 @@ const SideDrawer = ({ click, show }) => {
         })}
       >
         <LinkDisplay link="/">
-          <a onClick={(e) => handleMobileMenu(e, "home")}>Home</a>
+          <a onClick={(e: any) => handleMobileMenu(e, "home")}>Home</a>
         </LinkDisplay>
       </div>
       <div
@@ -43,7 +48,7 @@ const SideDrawer = ({ click, show }) => {
         })}
       >
         <LinkDisplay link="/#projects">
-          <a onClick={(e) => handleMobileMenu(e, "projects")}>Projects</a>
+          <a onClick={(e: any) => handleMobileMenu(e, "projects")}>Projects</a>
         </LinkDisplay>
       </div>
       <div
@@ -52,7 +57,7 @@ const SideDrawer = ({ click, show }) => {
         })}
       >
         <LinkDisplay link="/#skills">
-          <a onClick={(e) => handleMobileMenu(e, "skills")}>Skills</a>
+          <a onClick={(e: any) => handleMobileMenu(e, "skills")}>Skills</a>
         </LinkDisplay>
       </div>
       <div
@@ -61,7 +66,7 @@ const SideDrawer = ({ click, show }) => {
         })}
       >
         <LinkDisplay link="/#about">
-          <a onClick={(e) => handleMobileMenu(e, "about")}>About</a>
+          <a onClick={(e: any) => handleMobileMenu(e, "about")}>About</a>
         </LinkDisplay>
       </div>
       <div
@@ -70,7 +75,7 @@ const SideDrawer = ({ click, show }) => {
         })}
       >
         <LinkDisplay link="/#contact">
-          <a onClick={(e) => handleMobileMenu(e, "contact")}>Contact</a>
+          <a onClick={(e: any) => handleMobileMenu(e, "contact")}>Contact</a>
         </LinkDisplay>
       </div>
     </nav>

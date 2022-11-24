@@ -8,7 +8,7 @@ const ActiveLinkContext = createContext<ContextProp>({} as ContextProp);
 
 const initialState = "home";
 
-export function ActiveLinkContextProvider(props) {
+export function ActiveLinkContextProvider(props: any) {
   const [activeLink, setActiveLink] = useState(initialState);
 
   function resetActiveLink() {
