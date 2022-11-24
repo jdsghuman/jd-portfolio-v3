@@ -1,61 +1,70 @@
 import classNames from "classnames/bind";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Heading from "@components/Heading";
 import styles from "./Contact.module.scss";
 import Button from "@components/Button";
 
 const cx = classNames.bind(styles);
 
-const Contact = () => {
-  const [form, setForm] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    message: "",
-  });
-  const [responseMessage, setResponseMessage] = useState({
-    isSuccessful: false,
-    message: "",
-  });
+const initialState = {
+  firstName: "",
+  lastName: "",
+  email: "",
+  message: "",
+};
 
-  const sendEmail = async (firstName, lastName, email, message) => {
-    return axios({
-      method: "post",
-      url: "/api/send-mail",
-      data: {
-        email,
-        firstName,
-        lastName,
-        message,
-      },
-    });
-  };
+const Contact = () => {
+  const [form, setForm] = useState(initialState);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    try {
-      const req = await sendEmail(
-        form.firstName,
-        form.lastName,
-        form.email,
-        form.message
-      );
-
-      if (req.status === 201) {
-        setResponseMessage({
-          isSuccessful: true,
-          message: "Thank you for your message.",
+    axios
+      .post("/api/send-mail", {
+        email: form.email,
+        firstName: form.firstName,
+        lastName: form.lastName,
+        message: form.message,
+      })
+      .then(function (response) {
+        if (response.status !== 201) {
+          toast.error("Error. Message not sent!", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            theme: "colored",
+          });
+          console.log("failed", response.status);
+        }
+        setForm(initialState);
+        toast.success("Message sent!", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          theme: "colored",
         });
-      }
-    } catch (e) {
-      console.log(e);
-      setResponseMessage({
-        isSuccessful: false,
-        message: "Oops something went wrong. Please try again.",
+      })
+      .catch(function (error) {
+        console.log(error);
+        toast.error("Error. Message not sent!", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          theme: "colored",
+        });
       });
-    }
   };
 
   return (
@@ -135,6 +144,16 @@ const Contact = () => {
           </div>
         </div>
       </form>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        draggable
+        pauseOnHover
+      />
     </section>
   );
 };
