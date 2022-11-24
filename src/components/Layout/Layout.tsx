@@ -3,15 +3,15 @@ import Nav from "@components/Nav";
 import Footer from "@components/Footer";
 import Backdrop from "../Backdrop";
 import SideDrawer from "@components/SideDrawer";
-// import { MetaTags } from "../PropTypes/Tags";
-// import Meta from "../Meta";
+import Meta from "@components/Meta";
+import { MetaTags } from "@components/Meta/types";
 
 interface Props {
-  // metaTags: MetaTags;
+  metaTags: MetaTags;
   children: ReactNode;
 }
 
-const Layout = ({ children }: Props) => {
+const Layout = ({ children, metaTags }: Props) => {
   const [sideDrawerOpen, setSideDrawerOpen] = useState<boolean>(false);
 
   const backdropClickHandler = () => {
@@ -27,7 +27,7 @@ const Layout = ({ children }: Props) => {
 
   return (
     <>
-      {/* <Meta tags={metaTags} /> */}
+      <Meta tags={metaTags} />
       <Nav
         drawerToggleClickHandler={drawerToggleClickHandler}
         sideDrawerOpen={sideDrawerOpen}
