@@ -15,6 +15,12 @@
   }
 
   .item {
-    margin-right: 24px;
+    margin-right: 20px;
+    @media (max-width: 425px) {
+      font-size: 1.2rem;
+    }
+    &__icon {
+      font-size: 2rem;
+    }
   }
 }

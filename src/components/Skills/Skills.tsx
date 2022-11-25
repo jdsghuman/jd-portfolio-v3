@@ -22,9 +22,9 @@ const Skills = () => {
         <div className={styles["container--skills"]}>
           <p className={styles.bold}>Skills</p>
           <p>UX Design</p>
-          <p>UI Desin</p>
+          <p>UI Design</p>
           <p>Wireframing</p>
-          <p>User reserach</p>
+          <p>User research</p>
         </div>
         <div className={styles["container--skills"]}>
           <p className={styles.bold}>Interests</p>
