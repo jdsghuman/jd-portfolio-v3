@@ -4,6 +4,7 @@ import Head from "next/head";
 import type { AppProps } from "next/app";
 import Layout from "@components/Layout";
 import { ActiveLinkContextProvider } from "src/store/link-context";
+import { IsTopContextProvider } from "src/store/isTop-context";
 import { defaultMetaTags } from "@components/Utils/constants";
 import * as gtag from "@components/Utils/gtag";
 
@@ -25,17 +26,22 @@ export default function App({ Component, pageProps }: AppProps) {
   }, [router.events]);
   return (
     <ActiveLinkContextProvider>
-      <Layout metaTags={defaultMetaTags}>
-        <Head>
-          {/*Global meta tags*/}
-          <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-          <base href="/" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <link rel="icon" href="/favicon.ico" />
-          <meta name="theme-color" content="#ffffff"></meta>
-        </Head>
-        <Component {...pageProps} />
-      </Layout>
+      <IsTopContextProvider>
+        <Layout metaTags={defaultMetaTags}>
+          <Head>
+            {/*Global meta tags*/}
+            <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+            <base href="/" />
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1"
+            />
+            <link rel="icon" href="/favicon.ico" />
+            <meta name="theme-color" content="#ffffff"></meta>
+          </Head>
+          <Component {...pageProps} />
+        </Layout>
+      </IsTopContextProvider>
     </ActiveLinkContextProvider>
   );
 }
