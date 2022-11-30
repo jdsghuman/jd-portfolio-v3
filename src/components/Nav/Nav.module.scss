@@ -13,11 +13,9 @@ $breakpoint--md: 800px;
   z-index: 150;
   background: #ffffff;
   position: sticky;
-  // box-shadow: $box-shadow;
-  // @media (max-width: 800px) {
-  // position: sticky;
-  // }
-
+  &--top {
+    box-shadow: 3px 3px 12px 1px rgb(0 0 0 / 5%);
+  }
   @media (max-width: 900px) {
     grid-template-columns: 5% repeat(2, minmax(250px, 500px)) 5%;
   }

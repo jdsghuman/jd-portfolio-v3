@@ -1,10 +1,37 @@
+import React, { useCallback, useContext, useRef } from "react";
 import Image from "next/image";
 import profilePic from "../../../public/images/bobbie.png";
 import styles from "./Hero.module.scss";
+import IsTopContext from "src/store/isTop-context";
 
 const Hero = () => {
+  const observer = useRef<any>();
+  const isTopCtx = useContext(IsTopContext);
+  const callbackFunction = (entries: any) => {
+    if (!entries[0].isIntersecting) {
+      isTopCtx.setIsTopFalse();
+    } else {
+      isTopCtx.resetIsTop();
+    }
+  };
+
+  const options = {
+    root: null,
+    rootMargin: "20px",
+    threshold: 1.0,
+  };
+
+  const heroRef = useCallback(
+    async (node: any) => {
+      if (observer.current) observer.current.disconnect();
+      observer.current = new IntersectionObserver(callbackFunction, options);
+      if (node) observer.current.observe(node);
+    },
+    [isTopCtx.isTop]
+  );
+
   return (
-    <section className={styles.section}>
+    <section ref={heroRef} className={styles.section}>
       <div style={{ position: "relative" }}>
         <div
           id="home"
