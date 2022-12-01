@@ -1,5 +1,6 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import { useRouter } from "next/router";
+import Link from "next/link";
 import classNames from "classnames/bind";
 import LinkDisplay from "@components/LinkDisplay";
 import DrawerToggleButton from "@components/SideDrawer/DrawerToggle";
@@ -24,8 +25,12 @@ const Nav = ({ drawerToggleClickHandler, sideDrawerOpen }: NavProps) => {
   const handleMobileMenu = (e: Event, linkLocation: string) => {
     e.preventDefault();
     setIsExpanded(!isExpanded);
-    if (router.pathname !== "/") {
+    if (router.pathname !== "/" && linkLocation !== "resume") {
       router.push(`/#${linkLocation}`);
+    }
+
+    if (linkLocation === "resume") {
+      router.push("/resume.pdf");
     }
     const element = document.getElementById(linkLocation);
     element?.scrollIntoView({ block: "start", behavior: "smooth" });
@@ -107,6 +112,15 @@ const Nav = ({ drawerToggleClickHandler, sideDrawerOpen }: NavProps) => {
                   contact
                 </a>
               </LinkDisplay>
+            </li>
+            <li>
+              <Link
+                href="/resume.pdf"
+                target="_blank"
+                className={styles.nav__link}
+              >
+                resume
+              </Link>
             </li>
           </ul>
         </nav>
