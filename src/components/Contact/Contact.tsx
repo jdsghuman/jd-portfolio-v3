@@ -1,11 +1,13 @@
 import classNames from "classnames/bind";
-import React, { FormEventHandler, useState } from "react";
+import React, { useState, useCallback, useContext, useRef } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Heading from "@components/Heading";
-import styles from "./Contact.module.scss";
 import Button from "@components/Button";
+import ActiveLinkContext from "src/store/link-context";
+
+import styles from "./Contact.module.scss";
 
 const cx = classNames.bind(styles);
 
@@ -18,6 +20,29 @@ const initialState = {
 
 const Contact = () => {
   const [form, setForm] = useState(initialState);
+  const observer = useRef<any>();
+  const activeLinkCtx = useContext(ActiveLinkContext);
+
+  const callbackFunction = (entries: any) => {
+    if (entries[0].isIntersecting) {
+      activeLinkCtx.updateActiveLink("contact");
+    }
+  };
+
+  const options = {
+    root: null,
+    rootMargin: "1px",
+    threshold: 1.0,
+  };
+
+  const contactRef = useCallback(
+    async (node: any) => {
+      if (observer.current) observer.current.disconnect();
+      observer.current = new IntersectionObserver(callbackFunction, options);
+      if (node) observer.current.observe(node);
+    },
+    [activeLinkCtx.activeLink]
+  );
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
@@ -68,7 +93,7 @@ const Contact = () => {
   };
 
   return (
-    <section className={styles.section}>
+    <section ref={contactRef} className={styles.section}>
       <div style={{ position: "relative" }}>
         <div
           id="contact"
