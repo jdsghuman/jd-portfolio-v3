@@ -3,5 +3,5 @@ export interface projectType {
   role: string;
   description: string;
   image: string;
-  slug?: string;
+  slug: string;
 }

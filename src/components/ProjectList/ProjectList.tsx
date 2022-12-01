@@ -49,6 +49,7 @@ const ProjectList = () => {
               role={project.role}
               description={project.description}
               key={`${project.name}-${i}`}
+              slug={project.slug}
             />
           );
         })}

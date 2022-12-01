@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import Button from "@components/Button";
@@ -9,15 +10,18 @@ interface ProjectItemType {
   image: string;
   role: string;
   description: string;
-  slug?: string;
+  slug: string;
 }
 
-const ProjectItem = ({ name, image, role, description }: ProjectItemType) => {
+const ProjectItem = ({
+  name,
+  image,
+  role,
+  description,
+  slug,
+}: ProjectItemType) => {
   const router = useRouter();
 
-  const viewProject = () => {
-    router.push("/wip");
-  };
   return (
     <div className={styles.container}>
       <div className={styles["container--image"]}>
@@ -38,8 +42,13 @@ const ProjectItem = ({ name, image, role, description }: ProjectItemType) => {
           <p className={styles.text}>{description}</p>
         </div>
         <div>
-          <Button onClick={viewProject} className={styles.button} primary>
-            View Project
+          <Button className={styles.button} primary>
+            <Link
+              href={slug}
+              target={`${slug === "/wip" ? "_self" : "_blank"}`}
+            >
+              View Project
+            </Link>
           </Button>
         </div>
       </div>
