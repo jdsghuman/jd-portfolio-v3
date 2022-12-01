@@ -24,6 +24,9 @@ const Nav = ({ drawerToggleClickHandler, sideDrawerOpen }: NavProps) => {
   const handleMobileMenu = (e: Event, linkLocation: string) => {
     e.preventDefault();
     setIsExpanded(!isExpanded);
+    if (router.pathname !== "/") {
+      router.push(`/#${linkLocation}`);
+    }
     const element = document.getElementById(linkLocation);
     element?.scrollIntoView({ block: "start", behavior: "smooth" });
     activeLinkCtx.updateActiveLink(linkLocation);

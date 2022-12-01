@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 import Button from "@components/Button";
 
 import styles from "./ProjectItem.module.scss";
@@ -12,6 +13,11 @@ interface ProjectItemType {
 }
 
 const ProjectItem = ({ name, image, role, description }: ProjectItemType) => {
+  const router = useRouter();
+
+  const viewProject = () => {
+    router.push("/wip");
+  };
   return (
     <div className={styles.container}>
       <div className={styles["container--image"]}>
@@ -32,7 +38,7 @@ const ProjectItem = ({ name, image, role, description }: ProjectItemType) => {
           <p className={styles.text}>{description}</p>
         </div>
         <div>
-          <Button className={styles.button} primary>
+          <Button onClick={viewProject} className={styles.button} primary>
             View Project
           </Button>
         </div>
