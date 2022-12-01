@@ -1,6 +1,8 @@
+@import "../../styles/variables";
+
 .text {
   font-size: 2rem;
-  transition: font-size 1s;
+  transition: font-size 0.5s $ease-in--quint;
   @media (max-width: 600px) {
     font-size: 1.6rem;
   }
