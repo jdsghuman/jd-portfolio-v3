@@ -1,16 +1,42 @@
+import React, { useCallback, useContext, useRef } from "react";
 import Heading from "@components/Heading";
 import ProjectItem from "@components/ProjectItem";
 import { projects } from "@data/data";
+import ActiveLinkContext from "src/store/link-context";
 
 import styles from "./ProjectList.module.scss";
 
 const ProjectList = () => {
+  const observer = useRef<any>();
+  const activeLinkCtx = useContext(ActiveLinkContext);
+
+  const callbackFunction = (entries: any) => {
+    if (entries[0].isIntersecting) {
+      activeLinkCtx.updateActiveLink("project");
+    }
+  };
+
+  const options = {
+    root: null,
+    rootMargin: "30px",
+    threshold: 1.0,
+  };
+
+  const projectRef = useCallback(
+    async (node: any) => {
+      if (observer.current) observer.current.disconnect();
+      observer.current = new IntersectionObserver(callbackFunction, options);
+      if (node) observer.current.observe(node);
+    },
+    [activeLinkCtx.activeLink]
+  );
+
   return (
-    <section>
+    <section ref={projectRef}>
       <div style={{ position: "relative" }}>
         <div
           id="projects"
-          style={{ position: "absolute", top: "-50px", left: 0 }}
+          style={{ position: "absolute", top: "-70px", left: 0 }}
         ></div>
       </div>
       <Heading title="projects" />

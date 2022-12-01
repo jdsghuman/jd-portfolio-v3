@@ -3,15 +3,19 @@ import Image from "next/image";
 import profilePic from "../../../public/images/bobbie.png";
 import styles from "./Hero.module.scss";
 import IsTopContext from "src/store/isTop-context";
+import ActiveLinkContext from "src/store/link-context";
 
 const Hero = () => {
   const observer = useRef<any>();
   const isTopCtx = useContext(IsTopContext);
+  const activeLinkCtx = useContext(ActiveLinkContext);
+
   const callbackFunction = (entries: any) => {
     if (!entries[0].isIntersecting) {
       isTopCtx.setIsTopFalse();
     } else {
       isTopCtx.resetIsTop();
+      activeLinkCtx.updateActiveLink("home");
     }
   };
 

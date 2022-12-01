@@ -4,11 +4,11 @@ import classNames from "classnames/bind";
 import LinkDisplay from "@components/LinkDisplay";
 import DrawerToggleButton from "@components/SideDrawer/DrawerToggle";
 import ActiveLinkContext from "src/store/link-context";
+import IsTopContext from "src/store/isTop-context";
 
 const cx = classNames.bind(styles);
 
 import styles from "./Nav.module.scss";
-import IsTopContext from "src/store/isTop-context";
 
 interface NavProps {
   drawerToggleClickHandler: () => void;
@@ -21,7 +21,6 @@ const Nav = ({ drawerToggleClickHandler, sideDrawerOpen }: NavProps) => {
   const isTopCtx = useContext(IsTopContext);
   const [isExpanded, setIsExpanded] = useState(false);
 
-  console.log("isTop", isTopCtx.isTop);
   const handleMobileMenu = (e: Event, linkLocation: string) => {
     e.preventDefault();
     setIsExpanded(!isExpanded);
@@ -34,10 +33,6 @@ const Nav = ({ drawerToggleClickHandler, sideDrawerOpen }: NavProps) => {
     router.pathname === "/";
     activeLinkCtx.updateActiveLink("home");
   };
-
-  useEffect(() => {
-    console.log("isTop?", isTopCtx.isTop);
-  }, [isTopCtx.isTop]);
 
   return (
     <header

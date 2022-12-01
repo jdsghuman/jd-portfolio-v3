@@ -1,9 +1,36 @@
+import React, { useCallback, useContext, useRef } from "react";
 import Heading from "@components/Heading";
+import ActiveLinkContext from "src/store/link-context";
+
 import styles from "./Skills.module.scss";
 
 const Skills = () => {
+  const observer = useRef<any>();
+  const activeLinkCtx = useContext(ActiveLinkContext);
+
+  const callbackFunction = (entries: any) => {
+    if (entries[0].isIntersecting) {
+      activeLinkCtx.updateActiveLink("skills");
+    }
+  };
+
+  const options = {
+    root: null,
+    rootMargin: "20px",
+    threshold: 1.0,
+  };
+
+  const skillsRef = useCallback(
+    async (node: any) => {
+      if (observer.current) observer.current.disconnect();
+      observer.current = new IntersectionObserver(callbackFunction, options);
+      if (node) observer.current.observe(node);
+    },
+    [activeLinkCtx.activeLink]
+  );
+
   return (
-    <section className={styles.section}>
+    <section ref={skillsRef} className={styles.section}>
       <div style={{ position: "relative" }}>
         <div
           id="skills"
