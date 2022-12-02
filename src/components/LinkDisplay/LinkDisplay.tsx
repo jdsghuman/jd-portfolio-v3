@@ -11,7 +11,6 @@ interface LinkDisplayTypes {
 const LinkDisplay = ({ link, children }: LinkDisplayTypes) => {
   const activeLinkCtx = useContext(ActiveLinkContext);
   let className = children?.props?.className || "";
-  // if (activeLinkCtx.activeLink === link) {
   if (link.includes(activeLinkCtx.activeLink)) {
     className = `${className} ${styles.link__selected}`;
   }

@@ -60,7 +60,6 @@ const Skills = () => {
           <p>Running</p>
           <p>Photography</p>
           <p>Cooking</p>
-          <p>Coffee</p>
         </div>
       </div>
     </section>

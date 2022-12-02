@@ -20,7 +20,7 @@ export const projects: projectType[] = [
     role: "UX/UI Design",
     description: "Health and Wellness App",
     image: "/images/livewell.png",
-    slug: "/wip",
+    slug: "/livewell.pdf",
   },
   {
     name: "bobbieleeghuman",

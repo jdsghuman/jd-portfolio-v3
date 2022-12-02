@@ -12,13 +12,13 @@ const ProjectList = () => {
 
   const callbackFunction = (entries: any) => {
     if (entries[0].isIntersecting) {
-      activeLinkCtx.updateActiveLink("project");
+      activeLinkCtx.updateActiveLink("projects");
     }
   };
 
   const options = {
     root: null,
-    rootMargin: "30px",
+    rootMargin: "100px",
     threshold: 1.0,
   };
 
