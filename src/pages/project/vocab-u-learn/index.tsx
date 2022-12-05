@@ -38,7 +38,7 @@ const VocabULearn = () => {
         <ProjectHeader
           title="Vocab-U-Learn"
           description="A language Learning App"
-          image="/images/livewell-app.png"
+          image="https://i.imgur.com/PLfaze9.png"
         />
       </section>
       <section className={cx("container", "container__nested")}>
