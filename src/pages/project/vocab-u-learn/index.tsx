@@ -10,18 +10,30 @@ import ImageDisplay from "@components/ImageDisplay";
 import TextComponent from "@components/TextComponent";
 import ProjectNotes from "@components/Project/ProjectNotes";
 import ProjectNotesList from "@components/Project/ProjectNotes/ProjectNotesList";
+import { MetaTags, PageType, RobotsContent } from "@components/Meta/types";
 
 import styles from "./index.module.scss";
+import Meta from "@components/Meta";
 const cx = classNames.bind(styles);
 
 const VocabULearn = () => {
   const activeLinkCtx = useContext(ActiveLinkContext);
+
+  const postMetaTags: MetaTags = {
+    canonical: "https://www.bobbieleeghuman.com",
+    description: `UX Designer | Portfolio. Language Learning App`,
+    image: "https://www.bobbieleeghuman.com/images/bobbie.png",
+    robots: `${RobotsContent.follow},${RobotsContent.index}`,
+    title: `bobbieleeghuman | VocabUlearn`,
+    type: PageType.website,
+  };
 
   useEffect(() => {
     activeLinkCtx.updateActiveLink("other");
   }, []);
   return (
     <>
+      <Meta tags={postMetaTags} />
       <section className={styles.container}>
         <ProjectHeader
           title="Vocab-U-Learn"
