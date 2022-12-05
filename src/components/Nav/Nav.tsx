@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import classNames from "classnames/bind";
@@ -41,6 +41,12 @@ const Nav = ({ drawerToggleClickHandler, sideDrawerOpen }: NavProps) => {
     router.pathname === "/";
     activeLinkCtx.updateActiveLink("home");
   };
+
+  useEffect(() => {
+    if (router.pathname.includes("/project")) {
+      activeLinkCtx.updateActiveLink("other");
+    }
+  }, []);
 
   return (
     <header

@@ -1,7 +1,8 @@
-import Link from "next/link";
+import React, { useContext } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import Button from "@components/Button";
+import ActiveLinkContext from "src/store/link-context";
 
 import styles from "./ProjectItem.module.scss";
 
@@ -21,6 +22,12 @@ const ProjectItem = ({
   slug,
 }: ProjectItemType) => {
   const router = useRouter();
+  const activeLinkCtx = useContext(ActiveLinkContext);
+
+  const handleClick = (slug: any) => {
+    activeLinkCtx.updateActiveLink("another");
+    router.push(slug);
+  };
 
   return (
     <div className={styles.container}>
@@ -42,13 +49,17 @@ const ProjectItem = ({
           <p className={styles.text}>{description}</p>
         </div>
         <div>
-          <Button className={styles.button} primary>
-            <Link
-              href={slug}
+          <Button
+            onClick={() => handleClick(slug)}
+            className={styles.button}
+            primary
+          >
+            {/* <Link
+              // href={slug}
               target={`${!slug.includes("pdf") ? "_self" : "_blank"}`}
-            >
-              View Project
-            </Link>
+            > */}
+            View Project
+            {/* </Link> */}
           </Button>
         </div>
       </div>
