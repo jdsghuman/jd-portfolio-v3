@@ -1,18 +1,25 @@
+import React, { useContext, useEffect } from "react";
 import classNames from "classnames/bind";
+import ActiveLinkContext from "src/store/link-context";
 import ProjectOverview from "@components/Project/ProjectOverview";
 import ProjectHeader from "@components/Project/ProjectHeader";
 import ProjectDesignProcess from "@components/Project/ProjectDesignProcess";
 import ProjectOutline from "@components/Project/ProjectOutline";
-
-import styles from "./index.module.scss";
 import ProjectSteps from "@components/Project/ProjectSteps";
 import ImageDisplay from "@components/ImageDisplay";
 import TextComponent from "@components/TextComponent";
 import ProjectNotes from "@components/Project/ProjectNotes";
 import ProjectNotesList from "@components/Project/ProjectNotes/ProjectNotesList";
+
+import styles from "./index.module.scss";
 const cx = classNames.bind(styles);
 
 const VocabULearn = () => {
+  const activeLinkCtx = useContext(ActiveLinkContext);
+
+  useEffect(() => {
+    activeLinkCtx.updateActiveLink("other");
+  }, []);
   return (
     <>
       <section className={styles.container}>

@@ -4,7 +4,7 @@ import styles from "./ProjectHeader.module.scss";
 
 interface Props {
   title: string;
-  description: string;
+  description?: string;
   image: string;
 }
 
