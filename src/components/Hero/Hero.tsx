@@ -54,7 +54,7 @@ const Hero = () => {
           width={273}
           height={273}
           className={styles.image}
-          placeholder="blur"
+          // placeholder="blur"
         />
       </div>
     </section>

@@ -1,6 +1,6 @@
 import React, { useCallback, useContext, useRef } from "react";
 import Heading from "@components/Heading";
-import ProjectItem from "@components/ProjectItem";
+import ProjectItem from "@components/Project/ProjectItem";
 import { projects } from "@data/data";
 import ActiveLinkContext from "src/store/link-context";
 

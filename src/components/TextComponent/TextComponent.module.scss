@@ -1,0 +1,19 @@
+.container {
+  font-family: "Open Sans", sans-serif;
+  .title {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+  }
+  li {
+    margin-bottom: 2px;
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
+    font-size: 1.1rem;
+  }
+  p {
+    max-width: 1200px;
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
+    font-size: 1.1rem;
+  }
+}
