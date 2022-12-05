@@ -54,12 +54,7 @@ const ProjectItem = ({
             className={styles.button}
             primary
           >
-            {/* <Link
-              // href={slug}
-              target={`${!slug.includes("pdf") ? "_self" : "_blank"}`}
-            > */}
             View Project
-            {/* </Link> */}
           </Button>
         </div>
       </div>
