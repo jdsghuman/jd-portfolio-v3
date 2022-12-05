@@ -11,7 +11,9 @@ const ProjectNotes = ({ title, text, list }: NotesProp) => {
     <div className={styles.container}>
       <p className={styles.title}>{title}</p>
       <ul>
-        {list ? text.map((t) => <li>{t}</li>) : text.map((t) => <p>{t}</p>)}
+        {list
+          ? text.map((t, i) => <li key={i}>{t}</li>)
+          : text.map((t, i) => <p key={i}>{t}</p>)}
       </ul>
     </div>
   );

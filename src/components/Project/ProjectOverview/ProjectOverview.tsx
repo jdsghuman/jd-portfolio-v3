@@ -18,20 +18,26 @@ const ProjectOverview = ({ about, role, duration, tools }: Props) => {
       <div className={styles.description}>
         <div className={styles.description__text}>
           <h3>Role</h3>
-          {role?.map((r) => (
-            <p className={styles.list}>{r}</p>
+          {role?.map((r, i) => (
+            <p className={styles.list} key={i}>
+              {r}
+            </p>
           ))}
         </div>
         <div className={styles.description__text}>
           <h3>Duration</h3>
-          {duration?.map((d) => (
-            <p className={styles.list}>{d}</p>
+          {duration?.map((d, i) => (
+            <p className={styles.list} key={i}>
+              {d}
+            </p>
           ))}
         </div>
         <div className={styles.description__text}>
           <h3>Tools</h3>
-          {tools.map((tool) => (
-            <p className={styles.list}>{tool}</p>
+          {tools.map((tool, i) => (
+            <p className={styles.list} key={i}>
+              {tool}
+            </p>
           ))}
         </div>
       </div>

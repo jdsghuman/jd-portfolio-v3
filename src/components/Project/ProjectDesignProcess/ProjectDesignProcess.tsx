@@ -9,8 +9,8 @@ const ProjectDesignProcess = ({ items }: Props) => {
     <div className={styles.container}>
       <h3 className={styles.title}>Design Process</h3>
       <div className={styles.process}>
-        {items.map((item) => (
-          <div className={styles.process__item}>
+        {items.map((item, i) => (
+          <div className={styles.process__item} key={i}>
             <p>{item}</p>
           </div>
         ))}

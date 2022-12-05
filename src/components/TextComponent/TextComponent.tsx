@@ -12,12 +12,12 @@ const TextComponent = ({ title, text, numberList = false }: Props) => {
       <h4 className={styles.title}>{title}</h4>
       {numberList ? (
         <ol>
-          {text?.map((t) => (
-            <li>{t}</li>
+          {text?.map((t, i) => (
+            <li key={i}>{t}</li>
           ))}
         </ol>
       ) : (
-        text?.map((t) => <p>{t}</p>)
+        text?.map((t, i) => <p key={i}>{t}</p>)
       )}
     </div>
   );

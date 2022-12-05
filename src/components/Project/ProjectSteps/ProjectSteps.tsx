@@ -9,8 +9,10 @@ const ProjectSteps = ({ title, description }: Props) => {
   return (
     <div className={styles.container}>
       <h4 className={styles.title}>{title}</h4>
-      {description?.map((text) => (
-        <p className={styles.description}>{text}</p>
+      {description?.map((text, i) => (
+        <p className={styles.description} key={i}>
+          {text}
+        </p>
       ))}
     </div>
   );
