@@ -8,12 +8,26 @@ import ProjectOutline from "@components/Project/ProjectOutline";
 import ProjectSteps from "@components/Project/ProjectSteps";
 import ImageDisplay from "@components/ImageDisplay";
 
-import styles from "./index.module.scss";
+import ProjectNotesList from "@components/Project/ProjectNotes/ProjectNotesList";
+import ProjectNotes from "@components/Project/ProjectNotes";
+import TextComponent from "@components/TextComponent";
+import Meta from "@components/Meta";
+import { MetaTags, PageType, RobotsContent } from "@components/Meta/types";
 
+import styles from "./index.module.scss";
 const cx = classNames.bind(styles);
 
 const Livewell = () => {
   const activeLinkCtx = useContext(ActiveLinkContext);
+
+  const postMetaTags: MetaTags = {
+    canonical: "https://www.bobbieleeghuman.com",
+    description: `UX Designer | Portfolio. Health and Wellness App`,
+    image: "https://www.bobbieleeghuman.com/images/bobbie.png",
+    robots: `${RobotsContent.follow},${RobotsContent.index}`,
+    title: `bobbieleeghuman | Livewell`,
+    type: PageType.website,
+  };
 
   useEffect(() => {
     activeLinkCtx.updateActiveLink("other");
@@ -21,6 +35,7 @@ const Livewell = () => {
 
   return (
     <>
+      <Meta tags={postMetaTags} />
       <section className={styles.container}>
         <ProjectHeader
           title="-LIVE  WELL-"
@@ -117,6 +132,46 @@ const Livewell = () => {
           title="User Research"
           description={[
             "I conducted user surveys and interviews on potential users to gain a better understanding of the problem. As well, identify their goals and needs.  The survey was 13 questions long and completed by 21 participants via google forms. The Interview was a total of 12 questions, completed on 4 participants. The findings were then sorted onto stickynotes and grouped in themes and common insights. See below for main insights from each method.",
+          ]}
+        />
+        <TextComponent title="Key  Insights" />
+        <ProjectNotesList>
+          <>
+            <ProjectNotes
+              title="Survey Insights - 21 participants"
+              list
+              text={[
+                "Most participants are between 35-44 years old",
+                "Something important to note is that 71.4% of the participants in this group have NEVER been diagnosed with a chronic disease.",
+                "Participants are actively working on lifestyle habits, strongly towards exercise and food related but also note that they still would like to improve their habits. Stress, sleep, and socialization are other areas many people are working on also. One thing I noted is how many people chose stress as a barrier in their lifestyle yet very few people attend therapy (I question if this is due to the stigma around it).",
+                "Lack of time appears to be one of the biggest barriers in people’s lives when it comes to living a healthy lifestyle. Even more reason when an app may beneficial vs going to a facility.",
+                "Nearly half the participants reported using a health and wellness app at some point. ",
+                "Looking into participants goals, 20 of the 21 answered. Common goals were to lose weight, gain muscle, eat healthier, maintain health, less stress, and improve some person issues (foot, liver). These are goals related to health habits and reassuring that we are working towards a meaningful problem.",
+                "According to the results: progress tracker, accountability partner, meal/exercise plans, a way to log/track information, and challenges were some of the more popular features participants find helpful and motivating in reaching goals.",
+              ]}
+            />
+            <ProjectNotes
+              title="Interview Insights -  4 participants"
+              list
+              text={[
+                "Potential users are currently trying to work on improving their health (physical, mental, holistically) and are also struggling and wanting help with motivation, habit formation, and education.",
+                "Potential users share a common view of what 'healthy lifestyle' means along with aligning goals to achieve.",
+                "Want features such as motivation (quotes, tips, reminders), an app that covers lifestyle as a whole, social component, achievements and rewards, accountability, and calendar to track workouts.",
+                "Users lack motivation and wasn't motivation from an app for help them reach their health goals.",
+              ]}
+            />
+          </>
+        </ProjectNotesList>
+      </section>
+      <section className={styles.container}>
+        <ProjectOutline
+          title="03/Point of View"
+          description="The goal during this stage was to place myself into the shoes of the user. To do this I analyzed the information from the previous stage and sorted it into wants, goals, and needs. I then regrouped the categories and main insights. After doing this a general idea of our user population was identified and user personas were created."
+        />
+        <ProjectSteps
+          title="Affinity Mapping"
+          description={[
+            "Affinity mapping was used to explore findings, create visual maps of relationships, themes, and insights, allowing us to truly understand our participants.",
           ]}
         />
       </section>

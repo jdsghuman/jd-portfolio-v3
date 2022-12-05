@@ -9,18 +9,18 @@ export const projects: projectType[] = [
     slug: "/project/vocab-u-learn",
   },
   {
-    name: "Bobbieleelicious",
-    role: "UX/UI Design",
-    description: "Recipes and Lifestyle Blog",
-    image: "/images/bobbieleelicious.png",
-    slug: "/project/wip",
-  },
-  {
     name: "LiveWell",
     role: "UX/UI Design",
     description: "Health and Wellness App",
     image: "/images/livewell.png",
     slug: "/project/livewell",
+  },
+  {
+    name: "Bobbieleelicious",
+    role: "UX/UI Design",
+    description: "Recipes and Lifestyle Blog",
+    image: "/images/bobbieleelicious.png",
+    slug: "/project/wip",
   },
   {
     name: "bobbieleeghuman",
