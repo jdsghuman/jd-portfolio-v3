@@ -1,0 +1,33 @@
+@import "@styles/variables";
+
+.container {
+  // background: $background--light;
+  padding: 60px 0;
+  .title {
+    margin-bottom: 30px;
+    font-family: "Barlow", sans-serif;
+    font-size: 4rem;
+    text-align: center;
+    color: $secondary;
+    transition: font-size 0.5s $ease-in--quint;
+    @media (max-width: 600px) {
+      font-size: 3rem;
+      margin-top: 15px;
+    }
+  }
+  .description {
+    margin: 0 auto;
+    padding: 0 8px;
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
+    font-size: 1.6rem;
+    line-height: 2;
+    max-width: 1200px;
+    text-align: center;
+    transition: font-size 0.5s $ease-in--quint;
+    @media (max-width: 600px) {
+      font-size: 1.5rem;
+      line-height: 1.6;
+    }
+  }
+}

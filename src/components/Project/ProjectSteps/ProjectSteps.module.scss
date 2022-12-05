@@ -1,0 +1,29 @@
+@import "@styles/variables";
+
+.container {
+  padding: 0 8px;
+  .title {
+    margin-left: 2px;
+    margin-bottom: 8px;
+    padding-left: 10px;
+    font-family: "Montserrat", sans-serif;
+    border-left: 2px solid $secondary;
+    font-size: 2rem;
+    font-weight: 700;
+    @media (max-width: 550px) {
+      font-size: 1.8rem;
+    }
+  }
+  .description {
+    margin-left: 40px;
+    max-width: 1200px;
+    line-height: 1.5;
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
+    font-size: 1.2rem;
+    @media (max-width: 550px) {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+  }
+}

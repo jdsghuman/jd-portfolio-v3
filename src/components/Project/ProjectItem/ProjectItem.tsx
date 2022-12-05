@@ -45,7 +45,7 @@ const ProjectItem = ({
           <Button className={styles.button} primary>
             <Link
               href={slug}
-              target={`${slug === "/wip" ? "_self" : "_blank"}`}
+              target={`${!slug.includes("pdf") ? "_self" : "_blank"}`}
             >
               View Project
             </Link>

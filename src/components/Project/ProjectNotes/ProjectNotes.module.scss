@@ -1,0 +1,25 @@
+@import "@styles/variables";
+
+.container {
+  font-family: "Open Sans", sans-serif;
+  max-width: 400px;
+  background: $background--light;
+  padding: 10px;
+  margin: 10px 20px;
+  margin-bottom: 40px;
+  @media (max-width: 550px) {
+    margin: 0;
+    margin-bottom: 40px;
+  }
+  .title {
+    color: $secondary;
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+  li {
+    margin-bottom: 4px;
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
+    font-size: 1.1rem;
+  }
+}

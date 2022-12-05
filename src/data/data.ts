@@ -6,7 +6,7 @@ export const projects: projectType[] = [
     role: "UX/UI Design",
     description: "Language Learning App",
     image: "/images/vocab_u_learn.png",
-    slug: "/vocabulearn.pdf",
+    slug: "/vocab-u-learn",
   },
   {
     name: "Bobbieleelicious",

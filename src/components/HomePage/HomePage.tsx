@@ -1,4 +1,4 @@
-import ProjectList from "@components/ProjectList";
+import ProjectList from "@components/Project/ProjectList";
 import Skills from "@components/Skills";
 import About from "@components/About";
 import Contact from "@components/Contact";
