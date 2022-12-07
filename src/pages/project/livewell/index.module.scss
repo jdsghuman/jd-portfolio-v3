@@ -66,3 +66,21 @@
     }
   }
 }
+
+.analysis {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  &__item {
+    max-width: 450px;
+    padding: 0 40px;
+    @media (max-width: 500px) {
+      padding: 0 8px;
+    }
+    .heading {
+      font-weight: bold;
+    }
+  }
+}

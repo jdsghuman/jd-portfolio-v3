@@ -2,7 +2,7 @@ import styles from "./Outline.module.scss";
 
 interface Props {
   title: string;
-  description: string;
+  description?: string;
 }
 const ProjectOutline = ({ title, description }: Props) => {
   return (
