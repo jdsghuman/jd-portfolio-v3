@@ -55,9 +55,10 @@ const VocabULearn = () => {
       <section className={styles.container}>
         <ProjectDesignProcess
           items={["Empathize", "Define", "Ideate", "Prototype", "Test"]}
+          projectName="vocab-u-learn"
         />
       </section>
-      <section className={styles.container}>
+      <section className={styles.container} id="empathize">
         <ProjectOutline
           title="01/Empathize"
           description="During this phase, the goal is to better understand our target users. To
@@ -175,7 +176,7 @@ const VocabULearn = () => {
           ]}
         />
       </section>
-      <section className={cx("container", "container__nested")}>
+      <section className={cx("container", "container__nested")} id="define">
         <ProjectOutline
           title="02/Define"
           description="During this stage of the process, we look at the data gathered from the previous stage and define the problem. We 
@@ -223,6 +224,7 @@ const VocabULearn = () => {
       </section>
       <section
         className={cx("container", "container__nested", "container__grey")}
+        id="ideate"
       >
         <ProjectOutline
           title="03/Ideate"
@@ -255,7 +257,7 @@ const VocabULearn = () => {
           ]}
         />
       </section>
-      <section className={cx("container", "container__nested")}>
+      <section className={cx("container", "container__nested")} id="prototype">
         <ProjectOutline
           title="04/Prototype"
           description="In the prototype stage, we created some wireframes and prototypes around the users goals. "
@@ -301,6 +303,7 @@ const VocabULearn = () => {
       </section>
       <section
         className={cx("container", "container__nested", "container__grey")}
+        id="test"
       >
         <ProjectOutline
           title="05/Test"

@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import Button from "@components/Button";
 import ActiveLinkContext from "src/store/link-context";
@@ -32,7 +33,9 @@ const ProjectItem = ({
   return (
     <div className={styles.container}>
       <div className={styles["container--image"]}>
-        <Image src={image} alt={name} layout="fill" />
+        <Link href={slug}>
+          <Image src={image} alt={name} layout="fill" />
+        </Link>
       </div>
       <div className={styles.container__detail}>
         <div className={styles["text--box"]}>
