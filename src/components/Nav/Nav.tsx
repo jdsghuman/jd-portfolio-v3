@@ -30,7 +30,8 @@ const Nav = ({ drawerToggleClickHandler, sideDrawerOpen }: NavProps) => {
     }
 
     if (linkLocation === "resume") {
-      router.push("/resume.pdf");
+      router.push("/resume");
+      activeLinkCtx.updateActiveLink("resume");
     }
     const element = document.getElementById(linkLocation);
     element?.scrollIntoView({ block: "start", behavior: "smooth" });
@@ -120,13 +121,14 @@ const Nav = ({ drawerToggleClickHandler, sideDrawerOpen }: NavProps) => {
               </LinkDisplay>
             </li>
             <li>
-              <Link
-                href="/resume.pdf"
-                target="_blank"
-                className={styles.nav__link}
-              >
-                resume
-              </Link>
+              <LinkDisplay link="/resume">
+                <a
+                  onClick={(e: any) => handleMobileMenu(e, "resume")}
+                  className={styles.nav__link}
+                >
+                  resume
+                </a>
+              </LinkDisplay>
             </li>
           </ul>
         </nav>

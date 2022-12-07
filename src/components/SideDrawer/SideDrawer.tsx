@@ -98,7 +98,7 @@ const SideDrawer = ({ click, show }: SideDrawerProps) => {
           "drawer__item--hide": !show,
         })}
       >
-        <Link href="/resume.pdf" target="_blank" className={styles.nav__link}>
+        <Link href="/resume" className={styles.nav__link}>
           resume
         </Link>
       </div>

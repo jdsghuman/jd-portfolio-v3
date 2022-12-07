@@ -7,15 +7,14 @@ import ProjectDesignProcess from "@components/Project/ProjectDesignProcess";
 import ProjectOutline from "@components/Project/ProjectOutline";
 import ProjectSteps from "@components/Project/ProjectSteps";
 import ImageDisplay from "@components/ImageDisplay";
-
 import ProjectNotesList from "@components/Project/ProjectNotes/ProjectNotesList";
 import ProjectNotes from "@components/Project/ProjectNotes";
 import TextComponent from "@components/TextComponent";
 import Meta from "@components/Meta";
 import { MetaTags, PageType, RobotsContent } from "@components/Meta/types";
+import Button from "@components/Button";
 
 import styles from "./index.module.scss";
-import Button from "@components/Button";
 const cx = classNames.bind(styles);
 
 const Livewell = () => {
@@ -778,7 +777,7 @@ const Livewell = () => {
           ]}
         />
       </section>
-      <section className={cx("container", "container__nested")}>
+      {/* <section className={cx("container", "container__nested")}>
         <TextComponent
           title="Click here to interact with the full prototype!"
           center
@@ -788,7 +787,7 @@ const Livewell = () => {
             View Demo
           </Button>
         </div>
-      </section>
+      </section> */}
     </>
   );
 };
