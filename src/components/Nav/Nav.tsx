@@ -1,6 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
 import { useRouter } from "next/router";
-import Link from "next/link";
 import classNames from "classnames/bind";
 import LinkDisplay from "@components/LinkDisplay";
 import DrawerToggleButton from "@components/SideDrawer/DrawerToggle";

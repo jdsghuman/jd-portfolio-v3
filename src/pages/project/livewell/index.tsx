@@ -12,7 +12,6 @@ import ProjectNotes from "@components/Project/ProjectNotes";
 import TextComponent from "@components/TextComponent";
 import Meta from "@components/Meta";
 import { MetaTags, PageType, RobotsContent } from "@components/Meta/types";
-import Button from "@components/Button";
 
 import styles from "./index.module.scss";
 const cx = classNames.bind(styles);
@@ -65,14 +64,15 @@ const Livewell = () => {
           items={[
             "Understand",
             "Observe",
-            "Define",
+            "Point of View",
             "Ideate",
             "Prototype",
             "Test",
           ]}
+          projectName="livewell"
         />
       </section>
-      <section className={cx("container", "container__nested")}>
+      <section className={cx("container", "container__nested")} id="understand">
         <ProjectOutline
           title="01/Understand"
           description="In this stage of the Design Thinking Process, my goal is to understand the problem and empathize with the user."
@@ -127,6 +127,7 @@ const Livewell = () => {
       </section>
       <section
         className={cx("container", "container__nested", "container__grey")}
+        id="observe"
       >
         <ProjectOutline
           title="02/Observe"
@@ -167,7 +168,10 @@ const Livewell = () => {
           </>
         </ProjectNotesList>
       </section>
-      <section className={cx("container", "container__nested")}>
+      <section
+        className={cx("container", "container__nested")}
+        id="pointofview"
+      >
         <ProjectOutline
           title="03/Point of View"
           description="The goal during this stage was to place myself into the shoes of the user. To do this I analyzed the information from the previous stage and sorted it into wants, goals, and needs. I then regrouped the categories and main insights. After doing this a general idea of our user population was identified and user personas were created."
@@ -255,7 +259,7 @@ const Livewell = () => {
           ]}
         />
       </section>
-      <section className={cx("container", "container__nested")}>
+      <section className={cx("container", "container__nested")} id="ideate">
         <ProjectOutline
           title="04/Ideate"
           description="In the Ideate stage, with my user persona as a focus, I reviewed all the observations and collected data to come up with a full range of ideas and possible solutions to the identified problem. User flows and task analysis were created to show how users will use the app. Card sorting was used to help identify how to best organize the apps information in a way the is beneficial for the user."
@@ -405,6 +409,7 @@ const Livewell = () => {
       </section>
       <section
         className={cx("container", "container__nested", "container__grey")}
+        id="prototype"
       >
         <ProjectOutline
           title="05/Prototype"
@@ -446,7 +451,7 @@ const Livewell = () => {
           ]}
         />
       </section>
-      <section className={cx("container", "container__nested")}>
+      <section className={cx("container", "container__nested")} id="test">
         <ProjectOutline
           title="06/Test"
           description="In this stage, the interactive prototype was tested with potential users. A test script and test plan was created to facilitate the user testing. 
