@@ -20,11 +20,3 @@ const ProjectNotes = ({ title, text, list }: NotesProp) => {
 };
 
 export default ProjectNotes;
-
-{
-  /* <ul>
-        {list.map((text) => (
-          <li>{text}</li>
-        ))}
-      </ul> */
-}
