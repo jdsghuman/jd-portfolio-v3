@@ -32,15 +32,7 @@ const ProjectItem = ({
   return (
     <div className={styles.container}>
       <div className={styles["container--image"]}>
-        <Image
-          src={image}
-          alt={name}
-          // width={380}
-          // height={265}
-          layout="fill"
-          // className={styles.image}
-          // placeholder="blur"
-        />
+        <Image src={image} alt={name} layout="fill" />
       </div>
       <div className={styles.container__detail}>
         <div className={styles["text--box"]}>
