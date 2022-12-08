@@ -42,10 +42,12 @@ const Hero = () => {
           style={{ position: "absolute", top: "-1000px", left: 0 }}
         ></div>
       </div>
-      <div className={styles.text}>
-        Welcome, I am a UX/UI designer located in Katy, Texas. Fueled by coffee
-        and green smoothies, motivated by passion and a love for all things
-        design!
+      <div>
+        <h1 className={styles.text}>
+          Welcome, I am a UX/UI designer located in Katy, Texas. Fueled by
+          coffee and green smoothies, motivated by passion and a love for all
+          things design!
+        </h1>
       </div>
       <div>
         <Image

@@ -18,7 +18,7 @@
   &--skills {
     font-family: "Open Sans", sans-serif;
     font-size: 1.1rem;
-    @media (max-width: 630px) {
+    @media (max-width: 650px) {
       margin: 20px auto;
       background: #ffffff;
       padding: 10px;
@@ -27,10 +27,20 @@
       width: 250px;
     }
   }
-  @media (max-width: 630px) {
+  @media (max-width: 650px) {
     flex-direction: column;
+  }
+  .icon {
+    margin-right: 8px;
+    position: relative;
+    top: 2px;
   }
   .bold {
     font-weight: 700;
+  }
+
+  h4 {
+    margin-bottom: 0;
+    margin-left: -5px;
   }
 }

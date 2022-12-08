@@ -1,4 +1,6 @@
 import React, { useCallback, useContext, useRef } from "react";
+import { AiOutlineTool, AiOutlineHeart } from "react-icons/ai";
+import { BsPencil } from "react-icons/bs";
 import Heading from "@components/Heading";
 import ActiveLinkContext from "src/store/link-context";
 
@@ -40,21 +42,30 @@ const Skills = () => {
       <Heading title="skills" />
       <div className={styles.container}>
         <div className={styles["container--skills"]}>
-          <p className={styles.bold}>Applications</p>
+          <h4 className={styles.bold}>
+            <AiOutlineTool className={styles.icon} />
+            Applications
+          </h4>
           <p>Figma</p>
           <p>Marvel</p>
           <p>Sketch</p>
           <p>MIRO</p>
         </div>
         <div className={styles["container--skills"]}>
-          <p className={styles.bold}>Skills</p>
+          <h4 className={styles.bold}>
+            <BsPencil className={styles.icon} />
+            Skills
+          </h4>
           <p>UX Design</p>
           <p>UI Design</p>
           <p>Wireframing</p>
           <p>User research</p>
         </div>
         <div className={styles["container--skills"]}>
-          <p className={styles.bold}>Interests</p>
+          <h4 className={styles.bold}>
+            <AiOutlineHeart className={styles.icon} />
+            Interests
+          </h4>
           <p>My family</p>
           <p>Jiu jitsu</p>
           <p>Running</p>

@@ -3,6 +3,7 @@ import React, { useState, useCallback, useContext, useRef } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { AiOutlineMail } from "react-icons/ai";
 import Heading from "@components/Heading";
 import Button from "@components/Button";
 import ActiveLinkContext from "src/store/link-context";
@@ -164,6 +165,7 @@ const Contact = () => {
               </label>
             </div>
             <Button type="submit" primary>
+              <AiOutlineMail className={styles.icon} />
               Send Email
             </Button>
           </div>

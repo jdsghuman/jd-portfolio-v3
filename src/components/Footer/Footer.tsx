@@ -11,10 +11,18 @@ const Footer = () => (
   <footer className={styles.footer}>
     <div className={styles.container}>
       <p className={styles.item}>Let&apos;s keep in touch</p>
-      <Link target="_blank" href="https://www.linkedin.com/in/bobbieleeghuman">
+      <Link
+        target="_blank"
+        aria-label="linkedin"
+        href="https://www.linkedin.com/in/bobbieleeghuman"
+      >
         <BsLinkedin className={cx("item", "item__icon")} color="#117EB8" />
       </Link>
-      <Link target="_blank" href="mailto:hoffele.bobbieeleea@gmail.com">
+      <Link
+        target="_blank"
+        aria-label="email"
+        href="mailto:hoffele.bobbieeleea@gmail.com"
+      >
         <TfiEmail className={cx("item", "item__icon")} />
       </Link>
     </div>
