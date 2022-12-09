@@ -29,6 +29,12 @@
       font-size: 1.2rem;
       background: #ffffff;
       font-weight: 700;
+      transition: all 800ms cubic-bezier(0.22, 1, 0.36, 1);
+      &:hover {
+        background: $secondary;
+        color: #ffffff;
+        box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+      }
       @media (max-width: 1000px) {
         margin: 10px auto;
       }
