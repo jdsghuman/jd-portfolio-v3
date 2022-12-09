@@ -43,8 +43,7 @@ const Nav = ({ drawerToggleClickHandler, sideDrawerOpen }: NavProps) => {
   };
 
   useEffect(() => {
-    if (isTopCtx) {
-      console.log("top");
+    if (isTopCtx && router.pathname === "/") {
       activeLinkCtx.updateActiveLink("home");
     }
   }, [isTopCtx]);
