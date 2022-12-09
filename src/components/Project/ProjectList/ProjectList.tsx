@@ -18,7 +18,7 @@ const ProjectList = () => {
 
   const options = {
     root: null,
-    rootMargin: "100px",
+    rootMargin: "200px",
     threshold: 1.0,
   };
 

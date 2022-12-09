@@ -32,7 +32,7 @@ const Contact = () => {
 
   const options = {
     root: null,
-    rootMargin: "1px",
+    rootMargin: "100px",
     threshold: 1.0,
   };
 
