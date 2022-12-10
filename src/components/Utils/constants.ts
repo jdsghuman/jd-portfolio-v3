@@ -6,6 +6,6 @@ export const defaultMetaTags: MetaTags = {
   description: "UX Designer | Portfolio",
   image: "https://www.bobbieleeghuman.com/images/bobbie.png",
   robots: concatenateStrings(RobotsContent.index, RobotsContent.follow),
-  title: "bobbieeleeghuman",
+  title: "bobbieleeghuman",
   type: PageType.website,
 };
