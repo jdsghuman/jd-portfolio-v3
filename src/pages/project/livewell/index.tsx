@@ -80,7 +80,7 @@ const Livewell = () => {
         <ProjectSteps
           title="Competitive Analysis"
           description={[
-            "A competitive analysis was done to gather some insight, I analyzed 3 vocabulary apps currently on the market. My goal was to discover both strengths and weaknesses of the apps and come up with features to include and areas to be improved upon.",
+            "A competitive analysis was completed on 2 apps currently in the market, AccessElite and NOOM. My goal was to discover both strengths and weaknesses of the apps and come up with features to include and areas to be improved upon.",
           ]}
         />
         <div className={styles.flex__container}>
