@@ -1,4 +1,10 @@
-import React, { useContext, useEffect } from "react";
+import React, {
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+  useCallback,
+} from "react";
 import classNames from "classnames/bind";
 import ActiveLinkContext from "src/store/link-context";
 import ProjectHeader from "@components/Project/ProjectHeader";
@@ -14,9 +20,13 @@ import Meta from "@components/Meta";
 import { MetaTags, PageType, RobotsContent } from "@components/Meta/types";
 
 import styles from "./index.module.scss";
+import ScrollToTop from "@components/ScrollToTop";
 const cx = classNames.bind(styles);
 
 const Livewell = () => {
+  const [isTop, setIsTop] = useState(true);
+  const observer = useRef<any>(null);
+
   const activeLinkCtx = useContext(ActiveLinkContext);
 
   const postMetaTags: MetaTags = {
@@ -27,6 +37,20 @@ const Livewell = () => {
     title: `bobbieleeghuman | Livewell`,
     type: PageType.website,
   };
+
+  const callbackFunction = (entries: any) => {
+    const [entry] = entries;
+    setIsTop(!(!entry.isIntersecting || entry.boundingClientRect.top > 600));
+  };
+
+  const topRef = useCallback(
+    async (node: any) => {
+      if (observer.current) observer.current.disconnect();
+      observer.current = new IntersectionObserver(callbackFunction);
+      if (node) observer.current.observe(node);
+    },
+    [isTop]
+  );
 
   const handleClick = () => {
     console.log("clicked");
@@ -39,10 +63,12 @@ const Livewell = () => {
   return (
     <>
       <Meta tags={postMetaTags} />
+      <ScrollToTop isTop={isTop} />
       <section className={styles.container}>
         <ProjectHeader
           title="-LIVE  WELL-"
           image="https://i.imgur.com/m7zuwve.png"
+          topRef={topRef}
         />
       </section>
       <section className={cx("container", "container__nested")}>
