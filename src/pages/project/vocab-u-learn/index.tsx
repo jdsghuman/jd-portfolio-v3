@@ -1,4 +1,10 @@
-import React, { useContext, useEffect } from "react";
+import React, {
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+  useCallback,
+} from "react";
 import classNames from "classnames/bind";
 import ActiveLinkContext from "src/store/link-context";
 import ProjectOverview from "@components/Project/ProjectOverview";
@@ -14,9 +20,13 @@ import { MetaTags, PageType, RobotsContent } from "@components/Meta/types";
 
 import styles from "./index.module.scss";
 import Meta from "@components/Meta";
+import ScrollToTop from "@components/ScrollToTop";
 const cx = classNames.bind(styles);
 
 const VocabULearn = () => {
+  const [isTop, setIsTop] = useState(true);
+  const observer = useRef<any>(null);
+
   const activeLinkCtx = useContext(ActiveLinkContext);
 
   const postMetaTags: MetaTags = {
@@ -28,17 +38,33 @@ const VocabULearn = () => {
     type: PageType.website,
   };
 
+  const callbackFunction = (entries: any) => {
+    const [entry] = entries;
+    setIsTop(!(!entry.isIntersecting || entry.boundingClientRect.top > 600));
+  };
+
+  const topRef = useCallback(
+    async (node: any) => {
+      if (observer.current) observer.current.disconnect();
+      observer.current = new IntersectionObserver(callbackFunction);
+      if (node) observer.current.observe(node);
+    },
+    [isTop]
+  );
+
   useEffect(() => {
     activeLinkCtx.updateActiveLink("other");
   }, []);
   return (
     <>
       <Meta tags={postMetaTags} />
+      <ScrollToTop isTop={isTop} />
       <section className={styles.container}>
         <ProjectHeader
           title="Vocab-U-Learn"
           description="A language Learning App"
           image="https://i.imgur.com/PLfaze9.png"
+          topRef={topRef}
         />
       </section>
       <section className={cx("container", "container__nested")}>
