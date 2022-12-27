@@ -215,6 +215,7 @@ const Livewell = () => {
               alt: "Insight #1",
               height: 324,
               width: 600,
+              modal: true,
             },
           ]}
         />
@@ -225,6 +226,7 @@ const Livewell = () => {
               alt: "Insight #2",
               height: 324,
               width: 600,
+              modal: true,
             },
           ]}
         />
@@ -235,6 +237,7 @@ const Livewell = () => {
               alt: "Insight #3",
               height: 324,
               width: 600,
+              modal: true,
             },
           ]}
         />
@@ -245,6 +248,7 @@ const Livewell = () => {
               alt: "Insight #4",
               height: 324,
               width: 600,
+              modal: true,
             },
           ]}
         />
@@ -255,6 +259,7 @@ const Livewell = () => {
               alt: "Insight #5",
               height: 324,
               width: 600,
+              modal: true,
             },
           ]}
         />
@@ -271,6 +276,7 @@ const Livewell = () => {
               alt: "User persona 1",
               height: 350,
               width: 600,
+              modal: true,
             },
           ]}
         />
@@ -281,6 +287,7 @@ const Livewell = () => {
               alt: "User persona 2",
               height: 350,
               width: 600,
+              modal: true,
             },
           ]}
         />
@@ -298,6 +305,7 @@ const Livewell = () => {
               alt: "User journey 1",
               height: 350,
               width: 600,
+              modal: true,
             },
           ]}
         />
@@ -308,6 +316,7 @@ const Livewell = () => {
               alt: "User journey 2",
               height: 350,
               width: 600,
+              modal: true,
             },
           ]}
         />
@@ -342,6 +351,7 @@ const Livewell = () => {
                   alt: "Task analysis 1",
                   height: 387,
                   width: 239,
+                  modal: true,
                 },
               ]}
             />
@@ -375,6 +385,7 @@ const Livewell = () => {
                   alt: "Task analysis 2",
                   height: 387,
                   width: 239,
+                  modal: true,
                 },
               ]}
             />
@@ -394,6 +405,7 @@ const Livewell = () => {
               alt: "Site map",
               height: 208,
               width: 800,
+              modal: true,
             },
           ]}
         />
@@ -405,6 +417,7 @@ const Livewell = () => {
               alt: "Card sorting results",
               height: 632,
               width: 800,
+              modal: true,
             },
           ]}
         />
@@ -429,6 +442,7 @@ const Livewell = () => {
               alt: "Revised site map",
               height: 208,
               width: 800,
+              modal: true,
             },
           ]}
         />
@@ -450,12 +464,14 @@ const Livewell = () => {
               alt: "Low fidelity wireframes 1",
               height: 437,
               width: 475,
+              modal: true,
             },
             {
               src: "https://i.imgur.com/tIPByxJ.png",
               alt: "Low fidelity wireframes 1",
               height: 437,
               width: 475,
+              modal: true,
             },
           ]}
         />
@@ -467,12 +483,14 @@ const Livewell = () => {
               alt: "Mid fidelity wireframes 1",
               height: 437,
               width: 475,
+              modal: true,
             },
             {
               src: "https://i.imgur.com/fOFT5vb.png",
               alt: "Mid fidelity wireframes 2",
               height: 437,
               width: 475,
+              modal: true,
             },
           ]}
         />
@@ -499,12 +517,14 @@ const Livewell = () => {
               alt: "Affinity mapping 1",
               height: 437,
               width: 475,
+              modal: true,
             },
             {
               src: "https://i.imgur.com/rLX0gOG.png",
               alt: "Affinity mapping 2",
               height: 437,
               width: 475,
+              modal: true,
             },
           ]}
         />
@@ -516,6 +536,7 @@ const Livewell = () => {
               alt: "Rainbow spreadsheet",
               height: 357,
               width: 700,
+              modal: true,
             },
           ]}
         />
@@ -552,6 +573,7 @@ const Livewell = () => {
                   alt: "Usability test changes issue 1",
                   height: 300,
                   width: 400,
+                  modal: true,
                 },
               ]}
             />
@@ -586,6 +608,7 @@ const Livewell = () => {
                   alt: "Usability test changes issue 2",
                   height: 300,
                   width: 400,
+                  modal: true,
                 },
               ]}
             />
@@ -619,6 +642,7 @@ const Livewell = () => {
                   alt: "Usability test changes issue 3",
                   height: 300,
                   width: 400,
+                  modal: true,
                 },
               ]}
             />
@@ -654,6 +678,7 @@ const Livewell = () => {
                   alt: "Usability test changes issue 4",
                   height: 300,
                   width: 400,
+                  modal: true,
                 },
               ]}
             />
@@ -687,6 +712,7 @@ const Livewell = () => {
                   alt: "Usability test changes issue 5",
                   height: 300,
                   width: 400,
+                  modal: true,
                 },
               ]}
             />
@@ -708,6 +734,7 @@ const Livewell = () => {
               alt: "Test results 1",
               height: 360,
               width: 600,
+              modal: true,
             },
           ]}
         />
@@ -718,6 +745,7 @@ const Livewell = () => {
               alt: "Test results 2",
               height: 360,
               width: 600,
+              modal: true,
             },
           ]}
         />
@@ -786,24 +814,28 @@ const Livewell = () => {
               alt: "High fidelity prototype 1",
               height: 400,
               width: 200,
+              modal: true,
             },
             {
               src: "https://i.imgur.com/oXgRmid.png",
               alt: "High fidelity prototype 2",
               height: 400,
               width: 200,
+              modal: true,
             },
             {
               src: "https://i.imgur.com/chWtsy5.png",
               alt: "High fidelity prototype 3",
               height: 400,
               width: 200,
+              modal: true,
             },
             {
               src: "https://i.imgur.com/Eqycm9S.png",
               alt: "High fidelity prototype 4",
               height: 400,
               width: 200,
+              modal: true,
             },
           ]}
         />
