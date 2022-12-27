@@ -22,9 +22,6 @@ const ImageDisplay = ({ images }: Props) => {
         if (image.modal) {
           return (
             <ModalImage
-              // src={image.src}
-              // width={image?.width}
-              // height={image?.height}
               className={styles.image__modal}
               // placeholder="blur"
               key={i}
