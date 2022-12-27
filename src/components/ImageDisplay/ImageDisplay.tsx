@@ -1,4 +1,5 @@
 import Image from "next/image";
+// @ts-ignore
 import ModalImage from "react-modal-image";
 
 import styles from "./ImageDisplay.module.scss";
