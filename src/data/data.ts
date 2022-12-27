@@ -5,7 +5,7 @@ export const projects: projectType[] = [
     name: "Vocab-U-Learn",
     role: "UX/UI Design",
     description: "Language Learning App",
-    image: "/images/vocab_u_learn.png",
+    image: "https://i.imgur.com/Ud26Pbg.png",
     slug: "/project/vocab-u-learn",
   },
   {
@@ -19,14 +19,14 @@ export const projects: projectType[] = [
     name: "Bobbieleelicious",
     role: "UX/UI Design",
     description: "Recipes and Lifestyle Blog",
-    image: "/images/bobbieleelicious.png",
+    image: "https://i.imgur.com/nFd8q8S.png",
     slug: "/project/wip",
   },
   {
     name: "bobbieleeghuman",
     role: "UX/UI Design",
     description: "UX/UI Portfolio",
-    image: "/images/bobbie_portfolio.png",
+    image: "https://i.imgur.com/9y9D69u.png",
     slug: "/project/wip",
   },
 ];

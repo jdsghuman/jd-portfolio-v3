@@ -218,10 +218,11 @@ const VocabULearn = () => {
         <ImageDisplay
           images={[
             {
-              src: "/images/ashley-g.png",
-              alt: "",
+              src: "https://i.imgur.com/aFeXCuv.png",
+              alt: "Persona of Ashley",
               height: 517,
               width: 936,
+              modal: true,
             },
           ]}
         />
@@ -240,10 +241,11 @@ const VocabULearn = () => {
         <ImageDisplay
           images={[
             {
-              src: "/images/vocab-statement.png",
-              alt: "",
+              src: "https://i.imgur.com/qGUW40Y.png",
+              alt: "problem and hypothesis statement",
               height: 495,
               width: 900,
+              modal: true,
             },
           ]}
         />
@@ -269,6 +271,7 @@ const VocabULearn = () => {
               alt: "",
               height: 324,
               width: 600,
+              modal: true,
             },
           ]}
         />
@@ -279,6 +282,7 @@ const VocabULearn = () => {
               alt: "",
               height: 324,
               width: 600,
+              modal: true,
             },
           ]}
         />
@@ -301,6 +305,7 @@ const VocabULearn = () => {
               alt: "Image of wireframe 1",
               height: 437,
               width: 454,
+              modal: true,
             },
           ]}
         />
@@ -311,18 +316,21 @@ const VocabULearn = () => {
               alt: "Image of wireframe 2",
               height: 437,
               width: 475,
+              modal: true,
             },
             {
               src: "/images/vocab-wireframe-3.png",
               alt: "Image of wireframe 3",
               height: 437,
               width: 222,
+              modal: true,
             },
             {
               src: "/images/vocab-wireframe-4.png",
               alt: "Image of wireframe 4",
               height: 437,
               width: 454,
+              modal: true,
             },
           ]}
         />
@@ -399,6 +407,7 @@ const VocabULearn = () => {
               alt: "Prototype improvement 1",
               height: 351,
               width: 650,
+              modal: true,
             },
           ]}
         />
@@ -409,6 +418,7 @@ const VocabULearn = () => {
               alt: "Prototype improvement 2",
               height: 351,
               width: 650,
+              modal: true,
             },
           ]}
         />
@@ -419,6 +429,7 @@ const VocabULearn = () => {
               alt: "Prototype improvement 3",
               height: 351,
               width: 650,
+              modal: true,
             },
           ]}
         />
