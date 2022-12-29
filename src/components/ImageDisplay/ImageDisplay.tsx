@@ -22,14 +22,24 @@ const ImageDisplay = ({ images }: Props) => {
       {images?.map((image, i) => {
         if (image.modal) {
           return (
-            <ModalImage
-              className={styles.image__modal}
-              // placeholder="blur"
-              key={i}
-              small={image.src}
-              large={image.src}
-              alt={image?.alt}
-            />
+            <div
+              style={{
+                maxWidth: `${image.width}px`,
+                maxHeight: `${image.height}px`,
+              }}
+              className={styles.container__modal}
+            >
+              <ModalImage
+                className={styles.image__modal}
+                // placeholder="blur"
+                key={i}
+                small={image.src}
+                large={image.src}
+                alt={image?.alt}
+                width={`${image?.width}px`}
+                height={`${image?.height}px`}
+              />
+            </div>
           );
         }
         return (
