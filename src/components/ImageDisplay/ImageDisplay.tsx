@@ -23,6 +23,7 @@ const ImageDisplay = ({ images }: Props) => {
         if (image.modal) {
           return (
             <div
+              key={i}
               style={{
                 maxWidth: `${image.width}px`,
                 maxHeight: `${image.height}px`,
@@ -32,7 +33,6 @@ const ImageDisplay = ({ images }: Props) => {
               <ModalImage
                 className={styles.image__modal}
                 // placeholder="blur"
-                key={i}
                 small={image.src}
                 large={image.src}
                 alt={image?.alt}
