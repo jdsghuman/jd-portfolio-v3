@@ -26,7 +26,7 @@ const ImageDisplay = ({ images }: Props) => {
               key={i}
               style={{
                 maxWidth: `${image.width}px`,
-                maxHeight: `${image.height}px`,
+                // maxHeight: `${image.height}px`,
               }}
               className={styles.container__modal}
             >
