@@ -757,12 +757,14 @@ const Livewell = () => {
               alt: "Gestalt’s Principles image 1",
               height: 360,
               width: 500,
+              modal: true,
             },
             {
               src: "https://i.imgur.com/srMdUiQ.png",
               alt: "Gestalt’s Principles image 2",
               height: 360,
               width: 500,
+              modal: true,
             },
           ]}
         />
@@ -774,6 +776,7 @@ const Livewell = () => {
               alt: "Improved accessibility",
               height: 366,
               width: 600,
+              modal: true,
             },
           ]}
         />
@@ -787,18 +790,21 @@ const Livewell = () => {
               alt: "Product handoff 1",
               height: 500,
               width: 385,
+              modal: true,
             },
             {
               src: "https://i.imgur.com/TZ4Ecek.png",
               alt: "Product handoff 2",
               height: 500,
               width: 385,
+              modal: true,
             },
             {
               src: "https://i.imgur.com/0lYGgKj.png",
               alt: "Product handoff 3",
               height: 500,
               width: 385,
+              modal: true,
             },
           ]}
         />
