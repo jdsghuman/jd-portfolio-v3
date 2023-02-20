@@ -22,8 +22,7 @@ const ProjectHeader = ({ title, description, image, topRef }: Props) => {
           width={273}
           height={273}
           className={styles.image}
-          alt="Livewell app"
-          // placeholder="blur"
+          alt={description || "Project image"}
         />
       </div>
     </div>

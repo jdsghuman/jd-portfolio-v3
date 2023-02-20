@@ -8,4 +8,9 @@
     position: relative;
     top: 2px;
   }
+  .button {
+    &:hover {
+      background: #299cb6;
+    }
+  }
 }

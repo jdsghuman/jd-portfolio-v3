@@ -40,17 +40,15 @@ const About = () => {
       <Heading title="about" />
       <div className={styles.container}>
         <p className={styles.text}>
-          Hi, I’m Bobbie. I am a UX designer with over 12 years experience
-          working in healthcare and wellness promotion. I have seen many
-          problems in the healthcare industry, many of which I strongly believe
-          can be solved through technology and functional design. I want to
-          solve these problems, using my compassionate nature in caring for
-          others, creative ability, and passion for research and design. My
-          current position is at a healthcare start-up company where I work as a
-          virtual nurse. I work alongside the PYM team. I am excited to expand
-          my research and design-thinking skills, and to create functional
-          products and services to make the world a better place, one happy user
-          at a time
+          I am a Software Engineer who loves to code and build things. I enjoy
+          turning concepts and designs into front end UI and solving complex
+          problems with code. The JavaScript tech stack is my bread and butter,
+          using React and Nextjs.
+        </p>
+        <p className={styles.text}>
+          When I am not building web applications or coding, I can be found
+          spending time with my family, building something in the garage, or
+          drinking coffee…. I’m always drinking coffee!
         </p>
       </div>
     </section>

@@ -9,11 +9,11 @@ import styles from "./index.module.scss";
 
 const Resume = () => {
   const postMetaTags: MetaTags = {
-    canonical: "https://www.bobbieleeghuman.com",
-    description: `UX Designer | Portfolio. Language Learning App`,
-    image: "https://www.bobbieleeghuman.com/images/bobbie.png",
+    canonical: "https://www.jdghuman.com",
+    description: `Software Engineer | Front End Engineer`,
+    image: "https://www.jdghuman.com/images/jd.png",
     robots: `${RobotsContent.follow},${RobotsContent.index}`,
-    title: `bobbieleeghuman | Resume`,
+    title: `JD Ghuman | Resume`,
     type: PageType.website,
   };
 
@@ -31,8 +31,8 @@ const Resume = () => {
       <ImageDisplay
         images={[
           {
-            src: "https://i.imgur.com/bprDiQ8.png",
-            alt: "Resume of Bobbielee Ghuman",
+            src: "",
+            alt: "Resume of JD Ghuman",
             height: 1000,
             width: 780,
           },

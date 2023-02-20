@@ -16,18 +16,20 @@
   .text {
     font-family: "Open Sans", sans-serif;
     font-weight: 300;
-    font-size: 23px;
-    line-height: 33px;
+    font-size: 25px;
+    line-height: 38px;
     max-width: 600px;
     padding: 0 20px;
     transition: font-size 0.5s $ease-in--quint;
 
+    @media (max-width: 930px) {
+      font-size: 22px;
+    }
     @media (max-width: 550px) {
-      font-size: 18px;
-      line-height: 28px;
+      font-size: 20px;
+      line-height: 30px;
     }
   }
-
   .image {
     border-radius: 100%;
     object-fit: cover;

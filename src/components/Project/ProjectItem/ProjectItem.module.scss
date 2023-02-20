@@ -1,6 +1,6 @@
 .container {
   padding: 0 10px;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   @media (max-width: 410px) {
     padding: 2px;
   }
@@ -39,5 +39,8 @@
   }
   .button {
     margin-top: 5px;
+    &:hover {
+      background: #299cb6;
+    }
   }
 }

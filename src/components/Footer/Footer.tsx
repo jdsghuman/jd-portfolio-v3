@@ -1,6 +1,6 @@
 import Link from "next/link";
 import classNames from "classnames/bind";
-import { BsLinkedin } from "react-icons/bs";
+import { BsLinkedin, BsGithub } from "react-icons/bs";
 import { TfiEmail } from "react-icons/tfi";
 
 const cx = classNames.bind(styles);
@@ -14,16 +14,23 @@ const Footer = () => (
       <Link
         target="_blank"
         aria-label="linkedin"
-        href="https://www.linkedin.com/in/bobbieleeghuman"
+        href="https://www.linkedin.com/in/jdghuman/"
       >
         <BsLinkedin className={cx("item", "item__icon")} color="#117EB8" />
       </Link>
       <Link
         target="_blank"
         aria-label="email"
-        href="mailto:hoffele.bobbieeleea@gmail.com"
+        href="mailto:jdsghuman@gmail.com"
       >
         <TfiEmail className={cx("item", "item__icon")} />
+      </Link>
+      <Link
+        target="_blank"
+        aria-label="github"
+        href="https://github.com/jdsghuman"
+      >
+        <BsGithub className={cx("item", "item__icon")} />
       </Link>
     </div>
   </footer>

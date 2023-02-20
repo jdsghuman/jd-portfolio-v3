@@ -35,7 +35,7 @@ export default async function handler(
     const messageToSend = {
       from: process.env.ZOHO_EMAIL,
       to: process.env.GMAIL_EMAIL_TO,
-      subject: `Bobbielee Portfolio - ${firstName} ${lastName}`,
+      subject: `JD Ghuman Portfolio - ${firstName} ${lastName}`,
       text: message,
       html: `
       <p><b>Name: </b> ${firstName} ${lastName}</p>

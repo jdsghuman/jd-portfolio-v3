@@ -2,10 +2,10 @@ import { PageType, RobotsContent, MetaTags } from "@components/Meta/types";
 import { concatenateStrings } from "@components/Utils/Util";
 
 export const defaultMetaTags: MetaTags = {
-  canonical: "https://www.bobbieleeghuman.com",
-  description: "UX Designer | Portfolio",
-  image: "https://www.bobbieleeghuman.com/images/bobbie.png",
+  canonical: "https://www.jdghuman.com",
+  description: "Software Engineer | Front End Engineer",
+  image: "https://www.jdghuman.com/images/jd.png",
   robots: concatenateStrings(RobotsContent.index, RobotsContent.follow),
-  title: "bobbieleeghuman",
+  title: "JD Ghuman",
   type: PageType.website,
 };

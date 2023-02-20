@@ -1,10 +1,8 @@
-# Bobbie-Portfolio
-
-The UX and UI designs of this portfolio were designed by Bobbielee.
+# JD-Portfolio-v3
 
 View prod demo link:
 
-[bobbieleeghuman.com](https://bobbieleeghuman.com)
+[jdghuman.com](https://jdghuman.com)
 
 ## Installation
 

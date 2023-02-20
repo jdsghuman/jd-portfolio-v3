@@ -45,7 +45,7 @@ const SideDrawer = ({ click, show }: SideDrawerProps) => {
     >
       <div onClick={click} className={styles.drawer__header}>
         <LinkDisplay link="/">
-          <span>bobbieleeghuman</span>
+          <span>JD Ghuman</span>
         </LinkDisplay>
       </div>
       <div
@@ -66,7 +66,7 @@ const SideDrawer = ({ click, show }: SideDrawerProps) => {
           <a onClick={(e: any) => handleMobileMenu(e, "projects")}>Projects</a>
         </LinkDisplay>
       </div>
-      <div
+      {/* <div
         className={cx("drawer__item", {
           "drawer__item--hide": !show,
         })}
@@ -74,7 +74,7 @@ const SideDrawer = ({ click, show }: SideDrawerProps) => {
         <LinkDisplay link="/#skills">
           <a onClick={(e: any) => handleMobileMenu(e, "skills")}>Skills</a>
         </LinkDisplay>
-      </div>
+      </div> */}
       <div
         className={cx("drawer__item", {
           "drawer__item--hide": !show,
@@ -98,9 +98,9 @@ const SideDrawer = ({ click, show }: SideDrawerProps) => {
           "drawer__item--hide": !show,
         })}
       >
-        <Link href="/resume" className={styles.nav__link}>
+        {/* <Link href="/resume" className={styles.nav__link}>
           resume
-        </Link>
+        </Link> */}
       </div>
     </nav>
   );

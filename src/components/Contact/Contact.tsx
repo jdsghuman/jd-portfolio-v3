@@ -164,7 +164,7 @@ const Contact = () => {
                 />
               </label>
             </div>
-            <Button type="submit" primary>
+            <Button className={styles.button} type="submit" primary>
               <AiOutlineMail className={styles.icon} />
               Send Email
             </Button>

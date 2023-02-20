@@ -1,45 +1,49 @@
 import styles from "./ProjectOverview.module.scss";
+import Link from "next/link";
+import { AiFillGithub } from "react-icons/ai";
+import { BiLinkExternal } from "react-icons/bi";
 
 interface Props {
   about: string;
-  role: string[];
-  duration: string[];
-  tools: string[];
+  tags?: string[];
+  demoUrl?: string;
+  githubLink?: string;
 }
 
-const ProjectOverview = ({ about, role, duration, tools }: Props) => {
+const ProjectOverview = ({ about, tags, demoUrl, githubLink }: Props) => {
   return (
     <div className={styles.container}>
-      <h3 className={styles.title}>Project overview</h3>
+      <h2 className={styles.title}>Project overview</h2>
       <div className={styles.about}>
         <h3 className={styles.about__title}>About</h3>
         <p className={styles.about__text}>{about}</p>
       </div>
-      <div className={styles.description}>
-        <div className={styles.description__text}>
-          <h3>Role</h3>
-          {role?.map((r, i) => (
-            <p className={styles.list} key={i}>
-              {r}
-            </p>
-          ))}
-        </div>
-        <div className={styles.description__text}>
-          <h3>Duration</h3>
-          {duration?.map((d, i) => (
-            <p className={styles.list} key={i}>
-              {d}
-            </p>
-          ))}
-        </div>
-        <div className={styles.description__text}>
-          <h3>Tools</h3>
-          {tools.map((tool, i) => (
-            <p className={styles.list} key={i}>
-              {tool}
-            </p>
-          ))}
-        </div>
+
+      <div className={styles.tags}>
+        {tags?.map((tag) => (
+          <p className={styles.item}>{tag}</p>
+        ))}
+      </div>
+      <hr
+        style={{
+          marginTop: "20px",
+          background: "#dcdcdc",
+          border: "none",
+          height: "2px",
+          width: "90%",
+        }}
+      />
+      <div className={styles.link__container}>
+        {demoUrl && (
+          <Link href={demoUrl} target="_blank">
+            <BiLinkExternal className={styles.icons} />
+          </Link>
+        )}
+        {githubLink && (
+          <Link href={githubLink} target="_blank">
+            <AiFillGithub className={styles.icons} />
+          </Link>
+        )}
       </div>
     </div>
   );

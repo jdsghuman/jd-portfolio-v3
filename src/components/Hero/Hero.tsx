@@ -1,14 +1,27 @@
-import React, { useCallback, useContext, useRef } from "react";
+import React, {
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import Image from "next/image";
-import profilePic from "../../../public/images/bobbie.png";
-import styles from "./Hero.module.scss";
 import IsTopContext from "src/store/isTop-context";
 import ActiveLinkContext from "src/store/link-context";
+
+import styles from "./Hero.module.scss";
 
 const Hero = () => {
   const observer = useRef<any>();
   const isTopCtx = useContext(IsTopContext);
   const activeLinkCtx = useContext(ActiveLinkContext);
+  const [currentInterval, setCurrentInterval] = useState(0);
+
+  const images = [
+    "https://i.imgur.com/mYoNRcH.jpg",
+    "https://i.imgur.com/1S9TIjx.jpg",
+    "https://i.imgur.com/eNJ0rlQ.jpg",
+  ];
 
   const callbackFunction = (entries: any) => {
     if (!entries[0].isIntersecting) {
@@ -34,6 +47,13 @@ const Hero = () => {
     [isTopCtx.isTop]
   );
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentInterval(currentInterval < 2 ? currentInterval + 1 : 0);
+    }, 3000);
+    return () => clearInterval(interval);
+  });
+
   return (
     <section ref={heroRef} className={styles.section}>
       <div style={{ position: "relative" }}>
@@ -44,19 +64,17 @@ const Hero = () => {
       </div>
       <div>
         <h1 className={styles.text}>
-          Welcome, I am a UX/UI designer located in Katy, Texas. Fueled by
-          coffee and green smoothies, motivated by passion and a love for all
-          things design!
+          Hello, I am a software engineer that builds web applications for
+          desktop and mobile, who turns coffee into code.
         </h1>
       </div>
       <div>
         <Image
-          src={profilePic}
-          alt="Picture of Bobbielee Ghuman"
+          src={images[currentInterval]}
+          alt="Picture of JD Ghuman"
           width={273}
           height={273}
           className={styles.image}
-          // placeholder="blur"
         />
       </div>
     </section>

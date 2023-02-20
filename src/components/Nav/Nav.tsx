@@ -63,7 +63,7 @@ const Nav = ({ drawerToggleClickHandler, sideDrawerOpen }: NavProps) => {
       <div className={styles.header__container}>
         <div className={styles.logo}>
           <LinkDisplay link="/">
-            <a onClick={goToHomePage}>bobbieleeghuman</a>
+            <a onClick={goToHomePage}>JD Ghuman</a>
           </LinkDisplay>
         </div>
         <nav className={styles.nav__mobile}>
@@ -96,16 +96,6 @@ const Nav = ({ drawerToggleClickHandler, sideDrawerOpen }: NavProps) => {
               </LinkDisplay>
             </li>
             <li>
-              <LinkDisplay link="/#skills">
-                <a
-                  onClick={(e: any) => handleMobileMenu(e, "skills")}
-                  className={styles.nav__link}
-                >
-                  skills
-                </a>
-              </LinkDisplay>
-            </li>
-            <li>
               <LinkDisplay link="/#about">
                 <a
                   onClick={(e: any) => handleMobileMenu(e, "about")}
@@ -125,7 +115,7 @@ const Nav = ({ drawerToggleClickHandler, sideDrawerOpen }: NavProps) => {
                 </a>
               </LinkDisplay>
             </li>
-            <li>
+            {/* <li>
               <LinkDisplay link="/resume">
                 <a
                   onClick={(e: any) => handleMobileMenu(e, "resume")}
@@ -134,7 +124,7 @@ const Nav = ({ drawerToggleClickHandler, sideDrawerOpen }: NavProps) => {
                   resume
                 </a>
               </LinkDisplay>
-            </li>
+            </li> */}
           </ul>
         </nav>
       </div>
