@@ -16,7 +16,7 @@ const About = () => {
 
   const options = {
     root: null,
-    rootMargin: "1px",
+    rootMargin: "20px",
     threshold: 1.0,
   };
 
