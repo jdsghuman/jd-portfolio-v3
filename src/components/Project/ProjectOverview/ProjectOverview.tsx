@@ -20,8 +20,10 @@ const ProjectOverview = ({ about, tags, demoUrl, githubLink }: Props) => {
       </div>
 
       <div className={styles.tags}>
-        {tags?.map((tag) => (
-          <p className={styles.item}>{tag}</p>
+        {tags?.map((tag, i) => (
+          <p key={i} className={styles.item}>
+            {tag}
+          </p>
         ))}
       </div>
       <hr
