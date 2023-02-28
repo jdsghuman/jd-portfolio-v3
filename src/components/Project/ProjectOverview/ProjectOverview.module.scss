@@ -3,7 +3,6 @@
 .container {
   display: flex;
   flex-direction: column;
-  // justify-content: space-between;
   font-family: "Montserrat", sans-serif;
   min-height: 500px;
 
@@ -33,7 +32,7 @@
     }
     &__text {
       max-width: 700px;
-      font-family: "Inter", sans-serif;
+      font-family: "Montserrat", sans-serif;
       font-weight: 300;
       line-height: 1.6;
       @media (max-width: 500px) {
@@ -62,7 +61,7 @@
         background: $background--medium;
       }
       .list {
-        font-family: "Inter", sans-serif;
+        font-family: "Montserrat", sans-serif;
         font-weight: 300;
       }
     }
