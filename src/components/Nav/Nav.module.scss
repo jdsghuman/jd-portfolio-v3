@@ -259,6 +259,7 @@ $breakpoint--nav--break: 1050px;
         display: none;
       }
       @media (max-width: $breakpoint--nav) {
+        margin-top: 5px;
         margin-right: 10px;
       }
     }
