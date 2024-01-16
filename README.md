@@ -6,13 +6,13 @@ View prod demo link:
 
 ## Installation
 
-Yarn is the package manager. It will install and manage the dependencies.
+NPM is the package manager. It will install and manage the dependencies.
 
-- ### `yarn install`
+- ### `npm install`
 
   to install the required dependencies
 
-- ### `yarn run dev`
+- ### `npm run dev`
 
   to run the application locally in development mode.
 
