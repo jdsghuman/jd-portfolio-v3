@@ -18,7 +18,7 @@ export const projects: projectType[] = [
   {
     name: "The Wellness Crunch",
     role: "",
-    description: "Latest health and wellness news",
+    description: "Health and wellness news",
     image: "https://i.imgur.com/jKmH4KC.png",
     slug: "/project/the-wellness-crunch",
   },
