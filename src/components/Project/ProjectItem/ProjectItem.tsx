@@ -34,7 +34,7 @@ const ProjectItem = ({
     <div className={styles.container}>
       <div className={styles["container--image"]}>
         <Link href={slug}>
-          <Image src={image} alt={name} layout="fill" />
+          <Image src={image} alt={name} layout="fill" objectFit="cover" />
         </Link>
       </div>
       <div className={styles.container__detail}>
