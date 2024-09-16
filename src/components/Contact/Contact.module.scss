@@ -69,8 +69,9 @@
   }
 
   .button {
+    background: #125fe2;
     &:hover {
-      background: #299cb6;
+      background: $hoverButton;
     }
   }
 }

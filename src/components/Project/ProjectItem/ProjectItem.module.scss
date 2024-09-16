@@ -1,3 +1,5 @@
+@import "@styles/color-palette";
+
 .container {
   padding: 0 10px;
   margin-bottom: 50px;
@@ -42,8 +44,9 @@
   }
   .button {
     margin-top: 5px;
+    background: #125fe2;
     &:hover {
-      background: #299cb6;
+      background: $hoverButton;
     }
   }
 }
