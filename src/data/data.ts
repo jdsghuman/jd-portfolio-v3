@@ -25,7 +25,7 @@ export const projects: projectType[] = [
   {
     name: "Cardnasium",
     role: "",
-    description: "Customized greeting card shop",
+    description: "Customized greeting cards",
     image: "https://i.imgur.com/zZMEcWW.png",
     slug: "/project/cardnasium",
   },
