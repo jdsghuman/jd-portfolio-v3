@@ -55,17 +55,17 @@ const HtxMarket = () => {
       <ScrollToTop isTop={isTop} />
       <section className={styles.container}>
         <ProjectHeader
-          title="-HTX Market-"
-          image="https://i.imgur.com/AP16M3E.png"
+          title="-Cardnasium-"
+          image="https://i.imgur.com/Ohetgmd.png"
           topRef={topRef}
         />
       </section>
       <section className={cx("container", "container__nested")}>
         <ProjectOverview
-          about="HTX Market is a fully functional ecommerce web application connected to a CMS and a payment processor."
-          tags={["Nextjs", "Typescript", "CMS", "Prismic"]}
-          demoUrl=""
-          githubLink="https://github.com/jdsghuman/ecommerce-fm"
+          about="Cardnasium is a custom greeting card shop that allows users to create and send personalized cards to their loved ones. Users can choose from a variety of card designs, add custom messages, and send them to their friends and family."
+          tags={["Nextjs", "Typescript", "Prisma", "TailwindCSS", "Stripe"]}
+          demoUrl="https://cardnasium.com"
+          githubLink=""
         />
       </section>
     </>
