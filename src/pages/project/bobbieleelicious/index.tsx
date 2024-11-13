@@ -63,7 +63,7 @@ const Bobbieleelicious = () => {
       <section className={cx("container", "container__nested")}>
         <ProjectOverview
           about="A headless Blog and recipe application built with Next.js. Optimized for performance, scalability, and maintenance."
-          tags={["Nextjs", "Typescript", "CMS", "Contentful"]}
+          tags={["Nextjs", "TypeScript", "CMS", "Contentful"]}
           demoUrl="https://www.bobbieleelicious.com/"
           githubLink="https://github.com/jdsghuman/bobbieleeliciousv2"
         />

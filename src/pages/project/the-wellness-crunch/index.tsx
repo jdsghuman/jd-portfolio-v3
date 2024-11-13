@@ -63,7 +63,7 @@ const WellnessCrunch = () => {
       <section className={cx("container", "container__nested")}>
         <ProjectOverview
           about="A health and wellness news site that provides the latest information on health, fitness, and nutrition."
-          tags={["Nextjs", "Typescript", "TailwindCSS", "MailerLite"]}
+          tags={["Nextjs", "TypeScript", "TailwindCSS", "MailerLite"]}
           demoUrl="https://www.thewellnesscrunch.com/"
           githubLink="https://github.com/jdsghuman/wellness-crunch"
         />

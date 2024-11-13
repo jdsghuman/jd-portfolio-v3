@@ -63,7 +63,7 @@ const HtxMarket = () => {
       <section className={cx("container", "container__nested")}>
         <ProjectOverview
           about="Cardnasium is a custom greeting card shop that allows users to create and send personalized cards to their loved ones. Users can choose from a variety of card designs, add custom messages, and send them to their friends and family."
-          tags={["Nextjs", "Typescript", "Prisma", "TailwindCSS", "Stripe"]}
+          tags={["Nextjs", "TypeScript", "Prisma", "TailwindCSS", "Stripe"]}
           demoUrl="https://cardnasium.com"
           githubLink=""
         />

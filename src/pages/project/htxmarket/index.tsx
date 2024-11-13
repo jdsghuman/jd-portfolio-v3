@@ -63,7 +63,7 @@ const HtxMarket = () => {
       <section className={cx("container", "container__nested")}>
         <ProjectOverview
           about="HTX Market is a fully functional ecommerce web application connected to a CMS and a payment processor."
-          tags={["Nextjs", "Typescript", "CMS", "Prismic"]}
+          tags={["Nextjs", "TypeScript", "CMS", "Prismic"]}
           demoUrl=""
           githubLink="https://github.com/jdsghuman/ecommerce-fm"
         />
