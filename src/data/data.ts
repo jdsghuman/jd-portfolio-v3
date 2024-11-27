@@ -2,18 +2,18 @@ import { projectType } from "./types";
 
 export const projects: projectType[] = [
   {
+    name: "Cardnasium",
+    role: "",
+    description: "Customized greeting cards",
+    image: "https://i.imgur.com/zZMEcWW.png",
+    slug: "/project/cardnasium",
+  },
+  {
     name: "Bobbieleelicious",
     role: "",
     description: "Recipes and Lifestyle Blog",
     image: "https://i.imgur.com/nFd8q8S.png",
     slug: "/project/bobbieleelicious",
-  },
-  {
-    name: "HTX Market",
-    role: "",
-    description: "Ecommerce Market app",
-    image: "https://i.imgur.com/DiKAYqU.png",
-    slug: "/project/htxmarket",
   },
   {
     name: "The Wellness Crunch",
@@ -23,10 +23,10 @@ export const projects: projectType[] = [
     slug: "/project/the-wellness-crunch",
   },
   {
-    name: "Cardnasium",
+    name: "HTX Market",
     role: "",
-    description: "Customized greeting cards",
-    image: "https://i.imgur.com/zZMEcWW.png",
-    slug: "/project/cardnasium",
+    description: "Ecommerce Market app",
+    image: "https://i.imgur.com/DiKAYqU.png",
+    slug: "/project/htxmarket",
   },
 ];
