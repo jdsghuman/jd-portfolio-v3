@@ -7,6 +7,7 @@ import { ActiveLinkContextProvider } from "src/store/link-context";
 import { IsTopContextProvider } from "src/store/isTop-context";
 import { defaultMetaTags } from "@components/Utils/constants";
 import * as gtag from "@components/Utils/gtag";
+import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 
 import "../styles/globals.css";
 
@@ -25,9 +26,10 @@ export default function App({ Component, pageProps }: AppProps) {
     };
   }, [router.events]);
   return (
-    <ActiveLinkContextProvider>
-      <IsTopContextProvider>
-        <Layout metaTags={defaultMetaTags}>
+    <GoogleReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}>
+      <ActiveLinkContextProvider>
+        <IsTopContextProvider>
+          <Layout metaTags={defaultMetaTags}>
           <Head>
             {/*Global meta tags*/}
             <meta httpEquiv="x-ua-compatible" content="ie=edge" />
@@ -39,9 +41,10 @@ export default function App({ Component, pageProps }: AppProps) {
             <link rel="icon" href="/favicon.ico" />
             <meta name="theme-color" content="#ffffff"></meta>
           </Head>
-          <Component {...pageProps} />
-        </Layout>
-      </IsTopContextProvider>
-    </ActiveLinkContextProvider>
+            <Component {...pageProps} />
+          </Layout>
+        </IsTopContextProvider>
+      </ActiveLinkContextProvider>
+    </GoogleReCaptchaProvider>
   );
 }
