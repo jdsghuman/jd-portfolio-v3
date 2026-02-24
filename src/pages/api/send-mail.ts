@@ -7,6 +7,23 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method === "POST") {
+    const { firstName, lastName, email, message, captchaToken } = req.body;
+
+    const verifyRes = await fetch(
+      `https://www.google.com/recaptcha/api/siteverify`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: `secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${captchaToken}`,
+      }
+    );
+    const { success, score } = await verifyRes.json();
+    if (!success || score < 0.5) {
+      res.statusCode = 400;
+      res.end(JSON.stringify({ status: "captcha_failed" }));
+      return;
+    }
+
     let transporter = nodemailer.createTransport({
       host: "smtp.zoho.com",
       secure: true,
@@ -29,8 +46,6 @@ export default async function handler(
         }
       });
     });
-
-    const { firstName, lastName, email, message } = req.body;
 
     const messageToSend = {
       from: process.env.ZOHO_EMAIL,

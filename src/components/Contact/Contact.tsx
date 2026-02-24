@@ -1,6 +1,7 @@
 import classNames from "classnames/bind";
 import React, { useState, useCallback, useContext, useRef } from "react";
 import axios from "axios";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { AiOutlineMail } from "react-icons/ai";
@@ -23,6 +24,7 @@ const Contact = () => {
   const [form, setForm] = useState(initialState);
   const observer = useRef<any>();
   const activeLinkCtx = useContext(ActiveLinkContext);
+  const { executeRecaptcha } = useGoogleReCaptcha();
 
   const callbackFunction = (entries: any) => {
     if (entries[0].isIntersecting) {
@@ -48,12 +50,28 @@ const Contact = () => {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
 
+    if (!executeRecaptcha) {
+      toast.error("reCAPTCHA not ready. Please try again.", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "colored",
+      });
+      return;
+    }
+
+    const captchaToken = await executeRecaptcha("contact_form");
+
     axios
       .post("/api/send-mail", {
         email: form.email,
         firstName: form.firstName,
         lastName: form.lastName,
         message: form.message,
+        captchaToken,
       })
       .then(function (response) {
         if (response.status !== 201) {
